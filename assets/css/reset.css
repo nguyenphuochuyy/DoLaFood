@@ -1,0 +1,59 @@
+/* ==== Reset CSS cơ bản ==== */
+
+/* 1. Reset margin, padding và box-sizing cho toàn bộ phần tử */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Loại bỏ viền, font mặc định của trình duyệt */
+body, h1, h2, h3, h4, h5, h6, p,
+ul, ol, li, figure, figcaption,
+blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* 3. Đặt chiều cao 100% cho html và body */
+html, body {
+  height: 100%;
+  line-height: 1.5;
+  font-family: Quicksand, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Ảnh và video luôn co giãn theo vùng chứa */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Xóa gạch chân và màu mặc định của thẻ a */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 6. Danh sách không có dấu chấm */
+ul, ol {
+  list-style: none;
+}
+
+/* 7. Button và input không bị style mặc định */
+button, input, select, textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* 8. Thẻ table không có khoảng cách giữa các ô */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
