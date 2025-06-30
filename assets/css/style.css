@@ -238,7 +238,7 @@ b {
 .flashsale-section { 
   position: relative;
   background-color: #006a31;
-  margin-bottom: 320px;
+  margin-bottom: 250px;
   padding-top: 50px;
 }
 .flash-sale-title {
@@ -497,6 +497,95 @@ img {
     
     .flash-sale-products {
         bottom: -30%;
+    }
+    .product-list-scroll {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-bottom: 12px;
+        scroll-snap-type: x mandatory;
+    }
+    .product-list-scroll .food-card {
+        width: 50%;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        margin: 0;
+        background: #fff;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 18px 10px 16px 10px;
+        border: 1px solid #e31837;
+    }
+    .product-list-scroll .img-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        margin-bottom: 12px;
+    }
+    .product-list-scroll .food-img {
+        width: 80vw;
+        max-width: 320px;
+        height: auto;
+        border-radius: 16px;
+        object-fit: contain;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .product-list-scroll .fav-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        z-index: 2;
+        background: rgba(255,255,255,0.95);
+        border-radius: 50%;
+        padding: 4px;
+    }
+    .product-list-scroll .badge-new {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #e31837;
+        color: #fff;
+        font-size: 13px;
+        border-radius: 10px;
+        padding: 3px 10px;
+        font-weight: bold;
+        z-index: 2;
+    }
+    .product-list-scroll .food-info {
+        width: 100%;
+        text-align: left;
+        margin-top: 8px;
+    }
+    .product-list-scroll .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 4px;
+        color: #222;
+    }
+    .product-list-scroll .desc {
+        font-size: 15px;
+        color: #444;
+        margin-bottom: 2px;
+    }
+    .product-list-scroll .price-value {
+        color: #e31837;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .product-list-scroll .btn-success {
+        width: 100%;
+        border-radius: 8px;
+        font-size: 16px;
+        padding: 8px 0;
+        margin-top: 8px;
     }
 }
 .col-ct{
@@ -857,5 +946,159 @@ img {
 @media (max-width: 991.98px) {
   .banner-swiper .banner-btn {
     display: flex !important;
+  }
+}
+/* Menu Food */
+.food-menu-tabs {
+  background: #05743b;
+  border-radius: 5px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+}
+.food-menu-tabs .nav-link.active {
+  background:  #e31837 !important ;
+  color: #fff !important;
+  font-weight: 700;
+}
+.food-menu-tabs .nav-link {
+  background-color: #fff;
+  color: #000;
+  border-radius: 8px;
+  font-weight: 500;
+}
+.section-header p{
+  font-size: 20px;
+  font-weight: 700;
+  color: #006a31;
+}
+
+.product-list-scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.food-card {
+  width: 49%;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px 32px;
+  border: 1px solid #eee;
+  transition: box-shadow 0.2s;
+}
+
+.food-card .img-container {
+  flex: 0 0 120px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px;
+}
+
+.food-card .food-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.food-card .fav-icon {
+  width: 28px;
+  height: 28px;
+  margin-left: 8px;
+}
+
+.food-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.food-card .desc {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2px;
+}
+
+.food-card .see-more {
+  color: #e31837;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.food-card .see-more:hover {
+  text-decoration: underline;
+}
+
+.food-card .price-label {
+  font-size: 1rem;
+  color: #222;
+}
+
+.food-card .price-value {
+  color: #e31837;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.food-card > .d-flex {
+  margin-top: 8px;
+}
+
+.food-card .btn-success {
+  min-width: 80px;
+  font-weight: 600;
+  background: #05743b;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  padding: 8px 24px;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.food-card .btn-success:hover {
+  background: #e31837;
+  color: #fff;
+}
+
+.food-card > div:not(.img-container) {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .food-card {
+    max-width: 75%;
+    align-items: flex-start;
+    padding: 16px;
+    text-align: left;
+  }
+  .product-list-scroll {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 5px
+  }
+  .food-card .img-container {
+    margin-right: 0;
+    margin-bottom: 12px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .food-card .btn-success {
+    width: 100%;
+    margin-top: 12px;
   }
 }
