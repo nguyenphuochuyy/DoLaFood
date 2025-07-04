@@ -13,7 +13,7 @@
 }
 
 .header-center {
-  padding: 10px 0;
+  padding: 5px 0
 }
 
 .header-center-left img {
@@ -77,20 +77,39 @@
   color: white;
 }
 .nav-item {
-  padding: 8px;
+
+  margin-left: 10px;
+}
+.nav-item a:hover{
+  background-color:  #e31837;
+  color: white;
+  border-radius: 10px;
+
+}
+.active-btn{
+  background-color: #e31837;
+  color: white;
+  border-radius: 10px;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  transition: all 1s ease-in;
+  opacity : 1;
 }
 .nav-item a {
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  margin: 0 10px;
   font-weight: 600;
   opacity: 0.9;
 }
-.nav-item a:hover {
-  opacity: 1;
-  background-color: #e31837;
-  color: white;
-  border-radius: 5px;
+.dropdown-menu a{
+  color: #000;
+}
+.dropdown-menu a:hover{
+  background-color: #fff;
+  color:#e31837;
 }
 .hero-section img {
   border-radius: 10px;
@@ -1100,5 +1119,65 @@ img {
   .food-card .btn-success {
     width: 100%;
     margin-top: 12px;
+  }
+}
+
+/* Popup sản phẩm đã mua */
+.product-popup {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  min-width: 280px;
+  max-width: 350px;
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 9999;
+  padding: 20px 24px 20px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(60px);
+  transition: all 0.4s cubic-bezier(.4,2,.6,1);
+}
+.product-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.product-popup .popup-close {
+  background: none;
+  border: none;
+  color: #e31837;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+}
+.product-popup .popup-title {
+  font-weight: bold;
+  color: #05743b;
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+}
+.product-popup .popup-desc {
+  font-size: 0.98rem;
+  color: #444;
+}
+@media (max-width: 600px) {
+  .product-popup {
+    left: 8px;
+    bottom: 8px;
+    min-width: 180px;
+    max-width: 95vw;
+    padding: 12px 10px 12px 12px;
+    font-size: 0.95rem;
+  }
+  .product-popup .popup-title {
+    font-size: 1rem;
   }
 }

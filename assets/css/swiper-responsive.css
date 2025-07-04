@@ -1,0 +1,208 @@
+/* Responsive Swiper Styles */
+
+/* Container styles */
+.swiper-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Navigation buttons styling */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Custom navigation class */
+.custom-swiper-nav {
+    z-index: 10;
+}
+
+/* Pagination styling */
+.swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #007bff;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Slide styles */
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 767px) {
+    /* Mobile styles */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    
+    .swiper-container {
+        padding: 0 10px;
+    }
+    
+    .swiper-slide {
+        margin: 0 5px;
+    }
+    
+    .swiper-pagination {
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    /* Tablet styles */
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 14px;
+    }
+    
+    .swiper-container {
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 980px) {
+    /* Desktop styles */
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 18px;
+    }
+    
+    .swiper-container {
+        padding: 0 20px;
+    }
+}
+
+/* Animation for slide transitions */
+.swiper-slide-active {
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Loading state */
+.swiper-container.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.swiper-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Accessibility improvements */
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.swiper-pagination-bullet:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+    
+    .swiper-pagination-bullet {
+        background-color: #000;
+        border: 1px solid #fff;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+        color: #000;
+    }
+} 

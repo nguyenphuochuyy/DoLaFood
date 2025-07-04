@@ -1,0 +1,258 @@
+/* Header */
+.header-top {
+  background-color: #006a31;
+  color: #fff;
+  padding: 5px;
+}
+
+.header-top p {
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-center {
+  padding: 5px 0
+}
+
+.header-center-left img {
+  width: 150px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.search-form {
+  height: 40px;
+}
+
+.search-input {
+  padding: 1px 45px 1px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #dddddd;
+}
+
+.search-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #e23f58;
+  color: white;
+  cursor: pointer;
+}
+
+.delivery-info p {
+  color: #e31837;
+  font-weight: 600;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ddd;
+  position: relative;
+  color: #006a31;
+}
+
+.custom-btn {
+  background-color: #e31837;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.header-menu {
+  background-color: #006a31;
+}
+
+.header-menu-des {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.nav-item {
+  color: white;
+  margin-left: 10px;
+}
+
+.nav-item a:hover {
+  background-color: #e31837;
+  color: white;
+  border-radius: 10px;
+}
+
+.active-btn {
+  background-color: #e31837;
+  color: white;
+  border-radius: 10px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 5px;
+  transition: all 1s ease-in;
+  opacity: 1;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.dropdown-menu a {
+  color: #000;
+  font-weight: 600;
+}
+
+.dropdown-menu a:hover {
+  color: #e31837;
+
+}
+
+.breadcrumb-custom {
+  padding: 15px 0;
+  background-color: #ddd;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.breadcrumb-custom .active {
+  color: #e31837;
+}
+
+/* Nổi bật */
+.noibat {
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.noibat .title {
+  font-family: lobster;
+  color: #e31837;
+  display: block;
+  font-size: 20px;
+}
+
+.noibat .content {
+  font-size: 40px;
+  color: #006a31;
+  font-weight: 700;
+}
+
+.danhsachnoibat {
+  margin-top: 30px;
+}
+
+.danhsachnoibat .swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.danhsachnoibat .swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.danhsachnoibat .item {
+  background: #006a31;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px;
+  margin-right: 20px;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.danhsachnoibat .item:hover img {
+  transform: scale(1.1);
+  transition: all 1s ease;
+}
+
+.danhsachnoibat .item.active,
+.danhsachnoibat .item:hover {
+  background: #e31837;
+}
+
+.danhsachnoibat .item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+.danhsachnoibat .item-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.danhsachnoibat .item-desc {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: #fff;
+  color: #006a31;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .danhsachnoibat .item {
+    min-width: 220px;
+    max-width: 250px;
+    padding: 15px;
+  }
+
+  .danhsachnoibat .item img {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+  }
+
+  .danhsachnoibat .item-title {
+    font-size: 16px;
+  }
+
+  .danhsachnoibat .item-desc {
+    font-size: 13px;
+  }
+}
