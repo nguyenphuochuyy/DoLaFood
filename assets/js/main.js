@@ -1,4 +1,89 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Featured Products Swiper - Món ăn nổi bật
+  const featuredProductsSwiper = new Swiper('.featured-products-swiper', {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.featured-products-swiper .swiper-button-next',
+      prevEl: '.featured-products-swiper .swiper-button-prev',
+    },
+    breakpoints: {
+      // Mobile (small screens) - 2 products
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      // Tablet - 2 products
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // Desktop - 2 products
+      1200: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+    },
+  });
+  // customer swiper
+  var customerSwiper = new Swiper('.customer-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.customer-swiper .swiper-button-next',
+      prevEl: '.customer-swiper .swiper-button-prev',
+    },
+  });
+  // tại sao chọn chúng tôi
+  var whySwiper = new Swiper('.why-swiper', {
+    slidesPerView: 5,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.why-swiper .swiper-button-next',
+      prevEl: '.why-swiper .swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      576: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      }
+    }
+  });
+
+  // News Swiper
+  var newsSwiper = new Swiper('.news-swiper', {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: '.news-swiper .swiper-button-next',
+      prevEl: '.news-swiper .swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      }
+    }
+  });
+
+
   // Flash Sale Products Swiper
   const flashSaleSwiper = new Swiper('.flash-sale-swiper', {
     slidesPerView: 1,
@@ -122,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Thêm event listener để kích hoạt swipe trên mobile
   const swiperContainer = document.querySelector('.daubep-slider');
-  
+
   // Kích hoạt touch events cho mobile
   if (window.innerWidth <= 768) {
     swiperContainer.style.touchAction = 'pan-x pinch-zoom';
@@ -131,9 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
     swiperContainer.style.mozUserSelect = 'none';
     swiperContainer.style.msUserSelect = 'none';
   }
-  
+
   // Cập nhật khi resize window
-  window.addEventListener('resize', function() {
+  window.addEventListener('resize', function () {
     if (window.innerWidth <= 768) {
       swiperContainer.style.touchAction = 'pan-x pinch-zoom';
       swiperContainer.style.userSelect = 'none';
@@ -152,67 +237,124 @@ document.addEventListener('DOMContentLoaded', () => {
   // Thêm sự kiện hover cho chef items
   const chefItems = document.querySelectorAll('.cheaf-section .item');
   chefItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
       this.style.transform = 'translateY(-5px)';
       this.style.transition = 'transform 0.3s ease';
     });
-    
-    item.addEventListener('mouseleave', function() {
+
+    item.addEventListener('mouseleave', function () {
       this.style.transform = 'translateY(0)';
     });
   });
 
   // Thêm sự kiện click cho chef items
   chefItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       // Thêm hiệu ứng click
       this.style.transform = 'scale(0.95)';
       setTimeout(() => {
         this.style.transform = 'scale(1)';
       }, 150);
-      
+
       // Có thể thêm modal hoặc redirect ở đây
       console.log('Chef item clicked:', this.querySelector('.content span').textContent);
     });
   });
 });
 
-// Banner Swiper
-const bannerSwiper = new Swiper('.swipper-wrapper', {
-  slidesPerView: 1,
-  spaceBetween: 24,
+const featuredProductsSwiper = new Swiper('.featured-products-swiper1', {
+  slidesPerView: 2,
+  spaceBetween: 10,
   navigation: {
-    nextEl: '.banner-swiper .swiper-button-next',
-    prevEl: '.banner-swiper .swiper-button-prev',
+    nextEl: '.featured-products-swiper .swiper-button-next',
+    prevEl: '.featured-products-swiper .swiper-button-prev',
   },
   breakpoints: {
-    320: {
+    // Mobile (small screens) - 2 products
+    0: {
       slidesPerView: 2,
-      spaceBetween: 12,
+      spaceBetween: 15,
     },
-    480: {
+    // Tablet - 2 products
+    768: {
       slidesPerView: 2,
-      spaceBetween: 24,
+      spaceBetween: 20,
     },
-    576: {
+    // Desktop - 2 products
+    1200: {
       slidesPerView: 2,
-      spaceBetween: 24,
+      spaceBetween: 30,
     },
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 24,
-    },
-  }
+  },
 });
 
-//Scroll food menu 
+// banner section swiper
+const bannerSwiper = new Swiper('.banner-swiper', {
+  slidesPerView: 3,
+  spaceBetween: 10,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+})
+
+// Food Menu Swiper for Mobile
+const foodMenuSwiper = new Swiper('.food-menu-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  loop: false,
+  navigation: {
+    nextEl: '.food-menu-swiper .swiper-button-next',
+    prevEl: '.food-menu-swiper .swiper-button-prev',
+  },
+  breakpoints: {
+    // Mobile (small screens) - 1 product
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
+    // Tablet - 1.5 products
+    576: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+    // Desktop - hidden (grid layout used instead)
+    768: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+  },
+});
+
+//Scroll food menu
 document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('.menu-section');
   const navLinks = document.querySelectorAll('.food-menu-tabs .nav-link');
+  const foodMenuTabs = document.querySelector('.food-menu-tabs');
+  const foodMenuSections = document.querySelectorAll('.food-menu');
 
   function onScroll() {
     let scrollPos = window.scrollY || window.pageYOffset;
-    let offset = 120; 
+    let offset = 120;
+
+    // Xử lý sticky tabs
+    if (foodMenuTabs) {
+      const firstFoodMenu = document.querySelector('.food-menu');
+      const lastFoodMenu = document.querySelector('.food-menu:last-of-type');
+
+      if (firstFoodMenu && lastFoodMenu) {
+        const firstTop = firstFoodMenu.offsetTop;
+        const lastBottom = lastFoodMenu.offsetTop + lastFoodMenu.offsetHeight;
+
+        // Kiểm tra xem có đang trong vùng food menu không
+        if (scrollPos >= firstTop - 100 && scrollPos <= lastBottom) {
+          foodMenuTabs.classList.add('sticky');
+        } else {
+          foodMenuTabs.classList.remove('sticky');
+        }
+      }
+    }
 
     sections.forEach((section, idx) => {
       if (
@@ -233,8 +375,9 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
+        const offsetTop = target.offsetTop - 100;
         window.scrollTo({
-          top: target.offsetTop - 100,
+          top: offsetTop,
           behavior: 'smooth'
         });
       }
@@ -243,13 +386,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Thêm sự kiện cho header navigation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Mobile menu toggle
   const navbarToggler = document.querySelector('.navbar-toggler');
   const navbarCollapse = document.querySelector('.navbar-collapse');
-  
+
   if (navbarToggler && navbarCollapse) {
-    navbarToggler.addEventListener('click', function() {
+    navbarToggler.addEventListener('click', function () {
       navbarCollapse.classList.toggle('show');
     });
   }
@@ -259,9 +402,9 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdowns.forEach(dropdown => {
     const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
     const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-    
+
     if (dropdownToggle && dropdownMenu) {
-      dropdownToggle.addEventListener('click', function(e) {
+      dropdownToggle.addEventListener('click', function (e) {
         e.preventDefault();
         dropdownMenu.classList.toggle('show');
       });
@@ -269,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
+  document.addEventListener('click', function (e) {
     if (!e.target.closest('.dropdown')) {
       document.querySelectorAll('.dropdown-menu').forEach(menu => {
         menu.classList.remove('show');
@@ -280,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Smooth scroll for anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href !== '#') {
         e.preventDefault();
@@ -298,9 +441,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Search functionality
   const searchForm = document.querySelector('.search-form');
   const searchInput = document.querySelector('.search-input');
-  
+
   if (searchForm && searchInput) {
-    searchForm.addEventListener('submit', function(e) {
+    searchForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const query = searchInput.value.trim();
       if (query) {
@@ -314,9 +457,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Cart functionality
   const cartIcon = document.querySelector('.fa-cart-shopping');
   const cartCount = document.querySelector('.cart-count');
-  
+
   if (cartIcon && cartCount) {
-    cartIcon.addEventListener('click', function() {
+    cartIcon.addEventListener('click', function () {
       // Thêm logic cart ở đây
       console.log('Cart clicked');
       // Có thể mở modal cart hoặc redirect
@@ -325,9 +468,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // User icon functionality
   const userIcon = document.querySelector('.fa-user');
-  
+
   if (userIcon) {
-    userIcon.addEventListener('click', function() {
+    userIcon.addEventListener('click', function () {
       // Thêm logic user menu ở đây
       console.log('User menu clicked');
       // Có thể mở dropdown menu hoặc redirect
@@ -337,10 +480,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Custom button functionality
   const customBtns = document.querySelectorAll('.custom-btn');
   customBtns.forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
       const btnText = this.textContent.trim();
-      
+
       if (btnText === 'Đặt món online') {
         console.log('Order online clicked');
         // Redirect to order page
@@ -354,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Footer social links
   const socialLinks = document.querySelectorAll('.footer-social-icon');
   socialLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');
       if (href && href !== '#') {
@@ -388,7 +531,7 @@ document.addEventListener('DOMContentLoaded', function() {
     right: 20px;
     width: 50px;
     height: 50px;
-    background: #e31837;
+    background:#006a31;
     color: white;
     border: none;
     border-radius: 50%;
@@ -397,11 +540,11 @@ document.addEventListener('DOMContentLoaded', function() {
     z-index: 1000;
     transition: all 0.3s ease;
   `;
-  
+
   document.body.appendChild(backToTopBtn);
 
   // Show/hide back to top button
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (window.pageYOffset > 300) {
       backToTopBtn.style.display = 'block';
     } else {
@@ -410,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Back to top functionality
-  backToTopBtn.addEventListener('click', function() {
+  backToTopBtn.addEventListener('click', function () {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -418,7 +561,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Add loading animation
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     document.body.classList.add('loaded');
   });
 });
@@ -473,6 +616,3 @@ setInterval(() => {
   const product = getProductPurchased1MinuteAgo();
   if (product) showProductPopup(product);
 }, 20000);
-
-
-
