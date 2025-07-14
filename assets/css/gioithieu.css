@@ -59,6 +59,7 @@
   position: relative;
   color: #006a31;
 }
+
 .custom-btn {
   background-color: #e31837;
   color: white;
@@ -68,34 +69,41 @@
   cursor: pointer;
   margin-left: 5px;
 }
+
 .header-menu {
   background-color: #006a31;
 }
+
 .header-menu-des {
   display: flex;
   align-items: center;
   color: white;
 }
+
 .nav-item {
-  color: white;
+
   margin-left: 10px;
 }
-.nav-item a:hover{
+
+.nav-item a:hover {
+  background-color: #e31837;
+  color: white;
+  border-radius: 10px;
+
+}
+
+.active-btn {
   background-color: #e31837;
   color: white;
   border-radius: 10px;
 }
-.active-btn{
-  background-color: #e31837;
-  color: white;
-  border-radius: 10px;
-}
+
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
-  margin-top: 5px;
   transition: all 1s ease-in;
-  opacity : 1;
+  opacity: 1;
 }
+
 .nav-item a {
   color: white;
   text-decoration: none;
@@ -104,23 +112,19 @@
   font-weight: 600;
   opacity: 0.9;
 }
-.dropdown-menu a{
+
+.dropdown-menu a {
   color: #000;
-  font-weight: 600;
-}
-.dropdown-menu a:hover{
-  color: #e31837;
- 
 }
 
-.breadcrumb-custom {
-  padding: 10px 0;
-  background-color: #ddd;
-  font-size: 14px;
+.dropdown-menu a:hover {
+  background-color: #fff;
+  color: #e31837;
 }
 
 .breadcrumb-custom .active {
   color: #e31837;
+  cursor: pointer;
 }
 
 /* About section */
@@ -137,12 +141,14 @@ ul.list-unstyled li i {
   vertical-align: middle;
   margin-right: 10px;
 }
-.image-effect{
+
+.image-effect {
   position: relative;
-    display: block;
-    overflow: hidden;
-    border-radius: 5px;
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
 }
+
 .image-effect:hover::before {
   width: 100%;
   height: 100%;

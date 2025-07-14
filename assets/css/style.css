@@ -578,7 +578,7 @@ b {
 
   .footer-desc {
     font-size: 15px;
-  }
+  } 
 
   .menu-link {
     font-size: 15px;
@@ -1764,7 +1764,8 @@ body {
 
 /* News Section Styles */
 .news-section {
-  background: #f8f9fa;
+  margin-top: 50px;
+  background: #fff;
   padding: 60px 0 40px 0;
 }
 .news-card {
@@ -1776,6 +1777,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  text-align: left;
 }
 .news-card:hover {
   transform: translateY(-5px);
@@ -1804,18 +1806,18 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 .news-date {
   color: #e31837;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 500;
   margin-bottom: 8px;
 }
 .news-desc {
   font-size: 0.98rem;
-  color: #444;
+  color: #000;
   margin-bottom: 0;
   min-height: 44px;
   max-height: 44px;
