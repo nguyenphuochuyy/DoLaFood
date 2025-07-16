@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu hỏi thường gặp</title>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Vendor -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+  <link rel="stylesheet" href="assets/css/faq.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+</head>
+
+<body>
+  <header id="header" class="header">
+    <div class="header-top ">
+      <p>Chào mừng bạn đến với Dola Food!</p>
+    </div>
+    <div class="header-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Mobile Menu Toggle -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="col-lg-2 col-xl-2 col-12 image-effect">
+            <a href="">
+              <img src="assets/images/logo.webp" alt="Dola Food Logo">
+            </a>
+          </div>
+          <div class="col-lg-3 col-xl-4  search-header">
+            <form action="" class="search-form header-search-form input-group search-bar">
+              <input type="text" placeholder="Tìm kiếm món ăn, nhà hàng..."
+                class="search-input input-group-field auto-search search-auto form-control" />
+              <button type="submit" class="search-button "><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <div class="col-lg-7 col-xl-6">
+
+            <ul class="d-flex align-items-center justify-content-end list-unstyled">
+              <li>
+                <div class="d-flex align-items-center">
+                  <img src="assets/images/delivery.webp" width="50" height="50" alt="User Icon">
+                  <div class="ms-2 delivery-info">
+                    <span>Giao hàng miễn phí</span>
+                    <p class="mb-0">1900 6750</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex align-items-center icon ms-2">
+                  <p><i class="fa-solid fa-user"></i></p>
+              </li>
+              <li>
+                <div class="d-flex align-items-center icon ms-2">
+                  <p><i class="fa-solid fa-cart-shopping"></i></p>
+                  <span class="cart-count">0</span>
+              </li>
+              <li>
+
+                <a href="#" class=" custom-btn">Đặt món online</a>
+
+              </li>
+              <li>
+                <a href="#" class=" custom-btn">Đặt bàn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu">
+      <div class="container">
+        <div class="header-menu-des">
+          <div class="header-nav">
+            <nav class="navbar navbar-expand-lg custom-navbar">
+              <div class="container">
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">
+                        Trang chủ
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="gioithieu.html">
+                        Giới thiệu
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sản phẩm
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Sản phẩm A</a>
+                        <a class="dropdown-item" href="#">Sản phẩm B</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Tất cả sản phẩm</a>
+                      </div>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#">
+                        Tin tức
+                      </a>
+                    </li>
+                    <li class="nav-item active-btn">
+                      <a class="nav-link" href="#">
+                        Liên hệ
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Câu hỏi thường gặp
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Hệ thống của hàng
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Đặt bàn
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb-custom">
+      <div class="container">
+        <a href="index.html">Trang chủ</a> <span>&gt;</span> <span class="active">Câu hỏi thường gặp</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="faq-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="content-page">
+              <h3 class="faq-title">Câu hỏi thường gặp</h3>
+              <div class="product-fpt-with-stick-tab">
+                <div class="panel-group">
+                  <div class="faq">
+                    <h4>
+                      1. Làm thế nào để tôi trở thành thành viên của Dola?
+                    </h4>
+                    <div style="display: none;" class="content">
+                      <p>Quý khách vui lòng nhấn vào nút “Đăng ký” ở thanh menu trên cùng của màn hình (Đối với Desktop)
+                        hoặc tại góc trái màn hình, chọn biểu tượng Menu rồi chọn “Đăng ký” (Đối với Mobile).&nbsp;</p>
+                    </div>
+                  </div>
+                  <div class="faq">
+                    <h4>
+                      2. Tại sao tôi không thể đăng nhập vào tài khoản của tôi?
+                    </h4>
+                    <div style="display: none;" class="content">
+                      <p>Quý khách vui lòng kiểm tra kỹ về kiểu gõ hoặc phím Caps Lock/ IN HOA trong quá trình điền
+                        thông tin đăng nhập thành viên, trường hợp không thể đăng nhập thành công quý khách vui lòng
+                        chọn nút “Quên mật khẩu” ngay dưới ô mật khẩu và nhập email đã đăng ký.</p>
+                    </div>
+                  </div>
+                  <div class="faq">
+                    <h4>
+                      3. Tôi có thể sử dụng chung tài khoản với người khác được không?
+                    </h4>
+                    <div style="display: none;" class="content">
+                      <p>Quý khách nên sử dụng tài khoản cá nhân để đảm bảo độ tin cậy cũng như quyền lợi của bản thân
+                        khi mua sắm. Việc sử dụng chung tài khoản có thể dẫn đến những sai sót mà người chịu ảnh hưởng
+                        trực tiếp chính là quý khách hàng.</p>
+                    </div>
+                  </div>
+                  <div class="faq">
+                    <h4>
+                      4.Tại sao tôi nên đăng ký thành viên Dola?
+                    </h4>
+                    <div style="display: none;" class="content">
+                      <p>Việc đăng ký tài khoản là cơ hội giúp quý khách trở thành một trong những khách hàng thân thiết
+                        của Dola, được tiếp cận nhanh nhất các chương trình khuyến mãi, thông tin ưu đãi khi mua sắm.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="faq">
+                    <h4>
+                      5. Dola có chương trình ưu đãi nào hấp dẫn dành cho khách hàng thân thiết?
+                    </h4>
+                    <div style="display: none;" class="content">
+                      <p>Khi tổng giá trị đơn hàng của quý khách tích lũy đạt đủ điều kiện của từng mức hạng thành viên,
+                        quý khách sẽ nhận được ưu đãi giảm giá cho mọi đơn hàng tương, voucher sinh nhật tương ứng của
+                        hạng mức thành viên.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-page">
+              <h3 class="faq-title">Hỏi đáp về đặt hàng</h3>
+              <div class="product-fpt-with-stick-tab">
+                <div class="panel-group">
+                  <div class="faq">
+                    <h4>
+                      1. Tôi có thể đặt hàng bằng những hình thức nào?
+                    </h4>
+                    <div style="display: block;" class="content">
+
+
+                      <p>Quý khách có thể mua hàng tại Dola bằng những hình thức sau:</p>
+                      <ul>
+                        <li>Đặt hàng trực tuyến tại website</li>
+                        <li>Đặt hàng trực tiếp với tư vấn viên qua&nbsp;Hotline 1900 6750</li>
+                        <li>Đặt hàng trực tuyến trên các&nbsp;sàn thương mại điện tử&nbsp;</li>
+                        <li>Mua hàng trực tiếp tại các hệ thống cửa hàng</li>
+                      </ul>
+                      <p>Dola luôn khuyến khích quý khách tạo tài khoản và đặt hàng online để được hưởng các chính sách
+                        ưu đãi thành viên tốt hơn.</p>
+                    </div>
+                  </div>
+                  <div class="faq ">
+
+
+                    <h4>
+                      2. Tôi cần hỗ trợ mua hàng, làm cách nào để liên hệ với tư vấn viên?
+                    </h4>
+
+
+                    <div style="display:none" class="content">
+
+
+
+                      <p>Để liên hệ với nhân viên tư vấn, quý khách vui lòng liên hệ qua&nbsp;Hotline&nbsp;1900
+                        6750&nbsp;trong thời gian từ 9:00 – 18:00, &nbsp;T2 – T6 hằng tuần.</p>
+
+
+                    </div>
+                  </div>
+                  <div class="faq ">
+
+
+                    <h4>
+                      3. Dola có giới hạn về số lượng sản phẩm khi đặt hàng không?
+                    </h4>
+
+
+                    <div style="display:none" class="content">
+
+
+
+                      <p>Quý khách có thể đặt hàng với số lượng sản phẩm tùy ý. Đối với các sản phẩm có giới hạn về số
+                        lượng (trong các dịp flashsale, sale các dịp lễ Tết), hệ thống sẽ cập nhật số lượng được
+                        &nbsp;mua tối đa và chỉ ghi nhận đơn hàng có số lượng đặt mua trong giới hạn.</p>
+
+
+                    </div>
+                  </div>
+                  <div class="faq ">
+
+
+                    <h4>
+                      4. Tôi muốn xem lại lịch sử đơn hàng đã mua?
+                    </h4>
+
+
+                    <div style="display:none" class="content">
+
+
+
+                      <p>Quý khách vào trang tài khoản bằng cách bấm vào nút “Tài khoản” ở thanh menu trên cùng của màn
+                        hình (Đối với Desktop) hoặc tại góc trái màn hình, chọn biểu tượng Menu rồi chọn “Tài khoản”
+                        (Đối với Mobile). Sau đó chọn “Đơn hàng của bạn” để kiểm tra lại các sản phẩm đã đặt mua. Hoặc
+                        quý khách có thể kiểm tra lại những email Dola thông báo trạng thái đơn hàng.</p>
+
+
+                    </div>
+                  </div>
+                  <div class="faq ">
+                    <h4>
+                      5. Tôi cần làm gì để thay đổi hoặc hủy bỏ đơn hàng đã đặt?
+                    </h4>
+                    <div style="display:none" class="content">
+                      <p>Quý khách vui lòng liên hệ tư vấn viên của Dola Hotline&nbsp;1900 6750 để được hủy hoặc thay
+                        đổi sản phẩm trong đơn hàng.</p>
+                      <p>Lưu ý: Đơn hàng chỉ được hủy khi đơn hàng của quý khách chưa chuyển trạng thái cho đơn vị vận
+                        chuyển.</p>
+                    </div>
+                  </div>
+                  <div class="faq ">
+                    <h4>
+                      6. Tôi muốn khiếu nại/ đổi trả hàng, quy trình thực hiện như thế nào?
+                    </h4>
+                    <div style="display:none" class="content">
+                      <p>Dola luôn sẵn lòng đón nhận các ý kiến góp ý và phản hồi của quý khách quý khách vui lòng liên
+                        hệ tư vấn viên của Dola Hotline&nbsp;1900 6750 để được hủy hoặc thay đổi sản phẩm trong đơn hàng
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-page">
+              <h3 class="faq-title">Hỏi đáp về thanh toán</h3>
+              <div class="product-fpt-with-stick-tab">
+							
+                <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                  
+                  <div class="faq active">
+                    
+  
+                    <h4>											
+                      Tôi có thể thanh toán đơn hàng bằng những hình thức nào?
+                    </h4>
+  
+                    
+                    <div style="display: block;" class="content">
+  
+                      
+                      
+  <p>Quý khách có thể thanh toán cho Dola bằng những hình thức sau:</p>
+  <ol>
+  <li>Thanh toán tại chỗ (Ship COD)</li>
+  <li>Chuyển khoản trước:&nbsp;Khách hàng có thể chọn chuyển khoản trước vào tài khoản của Dola:</li></ol>
+  <p>&nbsp;</p>
+  
+                    </div>
+                  </div>     
+                </div>
+              </div>
+            </div>
+            <div class="content-page">
+              <h3 style="margin-top: 0" class="faq-title">Hỏi đáp về giao hàng</h3>
+              <div class="product-fpt-with-stick-tab">
+							
+                <div class="panel-group" id="accordion4" role="tablist" aria-multiselectable="true">
+                  
+                  <div class="faq">
+                    
+  
+                    <h4>											
+                      1. Tôi không ở Hồ Chí Minh, Dola có hỗ trợ giao hàng không?
+                    </h4>
+  
+                    
+                    <div style="display: none;" class="content">
+  
+                      
+                      
+  <p>Dola áp dụng giao hàng trên toàn quốc cho tất cả giá trị đơn hàng. Phí vận chuyển và thời gian giao hàng sẽ thay đổi tùy thuộc vào giá trị đơn hàng và từng khu vực cụ thể.</p>
+  
+  
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="faq ">
+                    
+  
+                    <h4>											
+                      2. Tôi có được hỗ trợ phí vận chuyển không?
+                    </h4>
+  
+                    
+                    <div style="display:none" class="content">
+  
+                      
+                      
+  <p>Dola&nbsp;hỗ trợ Miễn phí vận chuyển cho khách hàng theo khu vực và giá trị đơn hàng:</p>
+  <ul>
+  <li>
+  <p>TP.HCM:&nbsp;Miễn phí vận chuyển với đơn hàng từ 500,000</p></li>
+  <li>
+  <p>Toàn quốc: Miễn phí vận chuyển với đơn hàng từ 1,500,000</p></li></ul>
+  <p>Đối với đơn hàng chưa đạt điều kiện miễn phí vận chuyển sẽ có phí giao dựa trên ước tính hiển thị trên website. Phí giao nhận tính trên trọng lượng hàng hóa, hình thức chuyển phát nhanh hay thường và vị trí địa lý. Do đó, mức chi phí này phụ thuộc vào từng điều kiện cụ thể.</p>
+  
+  
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="faq ">
+                    
+  
+                    <h4>											
+                      3. Bao lâu thì tôi sẽ nhận được sản phẩm sau khi hoàn tất đặt hàng?
+                    </h4>
+  
+                    
+                    <div style="display:none" class="content">
+  
+                      
+                      
+  <p>Đối với khu vực nội thành Hồ Chí Minh, thời gian giao hàng dao động trong khoảng 1 – 2 ngày làm việc; đối với khu vực ngoại thành và các tỉnh, thời gian trung bình nhận hàng dao động từ 3 – 5 ngày.<br>
+  Lưu ý:</p>
+  <ul>
+  <li>Thời gian giao hàng được tính từ lúc Dola hoàn tất việc xác nhận đơn hàng đến khi nhận được hàng, không kể ngày lễ hay thứ 7 và chủ nhật.</li>
+  <li>Trường hợp khách hàng tại Hồ Chí Minh có nhu cầu nhận hàng hỏa tốc, vui lòng liên hệ trực tiếp tới Hotline&nbsp;1900 6750&nbsp;để được hỗ trợ.</li></ul>
+  
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="contact">
+              <h4>
+                Giải đáp thắc mắc
+              </h4>
+              <span class="content-form">
+                Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi, và chúng tôi sẽ liên lạc lại với bạn sớm nhất có thể .
+              </span>
+              <div id="pagelogin">
+                <form method="post" action="/postcontact" id="contact" accept-charset="UTF-8"><input name="FormType" type="hidden" value="contact"><input name="utf8" type="hidden" value="true"><input type="hidden" id="Token-46a011fe7d9c4a99b05f69a9e291bd4f" name="Token" value="03AFcWeA6ILLQOT2NUNJrdLjmKjUJVwA9k5twoZtwxPdUSB_eahDb6uSSriFirh7HzBwDImPyR1g4xV4acKdoV147dqc2ji04-erAvSFTqWXgVBjeBrYV9nQKCNzCRrBL_qoGyzEH5u5YwYskjiujjAH61GoxE0q4ts5Adpn73p-9XN1IIBZBUDUc04Xyyifnu85yj7Hdy8b9QRmtQKuXylji9Z2zZNIVhh2Am7LQdBegR7PYvJUwFisW_wIyl8DG-rNkrK0FXca8turHjQ_d8ehiDbpJSTAKdbcJOEZGndKLnifIHW8-n-F35oTh5uBKGDCamtWFXFbXdEznDROMb5XTcN-NS9HwmAUwZSJw94vAQMCjWGY-EHHF7K19me4s4-pmy0ioJy0HoY-wr3kPVk8-OK5Yw1EqbKSKQw-rhp4TzipBicJnHciyOd2D9_R7ZJBzz7zAK8VvGPC92V5KC7jMKjcDITrvYEIuAZjT1xcMwsDNK9eQxYs2P_TAxj0KOKpJoUzn3OYMmdnue93-6u17jEFw-RTegOhpBit9gTVPFkpcCqBw68lAULLF-nXMTwOKIbTWGp0hzGRgt4nd1UU8R9UZow20Rq7naUl1Vm-U2w3L2Ebb-Z93b3d1581fiQUum3qqw5WEWTzW4dxOrDD38F3zS_73w4hjsMLLuOMBHafPU-QLp8U_bUQ_GcXHYKHbndQi2OhyN4HushP7vY3TmIsRwfGS_mMHEvjaUq7qy_LLFjDkToZcSOT_I0cZEptdAIGhZZhE-4OUUCxQh0ZJkLifaf99icJzFlKTCjqcguTNoe5mvT5z_mxUiAvJErhfDn9XQG26R00B7lVgMfjtJcNv-OEYoumxwsdOkINYeXFkK909FJEALWiPeFYe_rjWBirirAYQ0soPUrjO78tTF0A5FIZ57P27jNu9VjbwRcMMBmFeADBA"><script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script><script>grecaptcha.ready(function() {grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {action: "contact"}).then(function(token) {document.getElementById("Token-46a011fe7d9c4a99b05f69a9e291bd4f").value = token});});</script>
+                
+                
+                <div class="group_contact">
+                  <input placeholder="Họ và tên" type="text" class="form-control  form-control-lg" required="" value="" name="contact[Name]">
+                  <input placeholder="Email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="" id="email1" class="form-control form-control-lg" value="" name="contact[email]">
+                  <input type="number" placeholder="Điện thoại*" name="contact[phone]" class="form-control form-control-lg" required="">
+                  <textarea placeholder="Nội dung" name="contact[body]" id="comment" class="form-control content-area form-control-lg" rows="5" required=""></textarea>
+                  <button type="submit" class="btn-lienhe">Gửi thông tin</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer bg-green text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <!-- VỀ CHÚNG TÔI -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="footer-title mb-2">VỀ CHÚNG TÔI</h4>
+              <div class="footer-underline mb-3"></div>
+              <p class="footer-desc mb-4">
+                Chào mừng bạn đến với Dola Food - điểm đến lý tưởng cho những người yêu thưởng thức pizza tại thành
+                phố!
+                Dola Food tự hào là địa chỉ pizza hàng đầu, nổi tiếng với chất lượng món ăn tuyệt vời, dịch vụ tận tâm
+                và mức độ hài lòng cao từ phía khách hàng.
+              </p>
+              <h5 class="footer-title mb-2" style="font-size: 1.1rem;">HÌNH THỨC THANH TOÁN</h5>
+              <div class="footer-underline mb-3"></div>
+              <div class="d-flex gap-2 align-items-center">
+                <div class="payment-method text-center">
+                  <img src="assets/images/payment_1.webp" alt="Tiền mặt" width="48">
+                </div>
+                <div class="payment-method text-center">
+                  <img src="assets/images/payment_2.webp" alt="Chuyển khoản" width="48">
+                </div>
+                <div class="payment-method text-center">
+                  <img src="assets/images/payment_3.webp" alt="Visa/Master" width="48">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- THÔNG TIN -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="footer-title mb-2">THÔNG TIN</h4>
+              <div class="footer-underline mb-3"></div>
+              <p class="footer-desc mb-3">
+                Công ty TNHH Dola Food chuyên phục vụ trong lĩnh vực nhà hàng. Mã số thuế: 123456xxxx - Ngày cấp:
+                13/05/2024 - Nơi cấp: Sở kế hoạch và đầu tư TPHCM - Website: dola-food.mysapo.net
+              </p>
+              <ul class="footer-contact list-unstyled mb-4">
+                <li class="d-flex align-items-center mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-map-marker-alt"></i></span>
+                  <span>70 Lữ Gia, Phường 15, Quận 11, TP.HCM</span>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-clock"></i></span>
+                  <span>
+                    8h - 22h<br>
+                    Từ thứ 2 đến chủ nhật
+                  </span>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-phone"></i></span>
+                  <span>1900 6750</span>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-envelope"></i></span>
+                  <span>support@sapo.vn</span>
+                </li>
+              </ul>
+              <h6 class="footer-title mb-2" style="font-size: 1.1rem;">THEO DÕI CHÚNG TÔI</h6>
+              <div class="footer-underline mb-3"></div>
+              <div class="footer-social d-flex gap-3">
+                <a href="#" class="footer-social-icon"><img src="assets/images/zalo-icon.png" alt="Zalo" width="22"></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CHÍNH SÁCH VÀ HƯỚNG DẪN -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100">
+            <h4 class="footer-title mb-2">CHÍNH SÁCH VÀ HƯỚNG DẪN</h4>
+            <div class="footer-underline mb-3"></div>
+            <ul class="footer-menu-list ps-0">
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Chính sách thành
+                  viên</a></li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Chính sách thanh
+                  toán</a></li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Bảo mật thông tin cá
+                  nhân</a></li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Hướng dẫn mua
+                  hàng</a>
+              </li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Hướng dẫn thanh
+                  toán</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- TIN TỨC MỚI -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100">
+            <h4 class="footer-title mb-2">TIN TỨC MỚI</h4>
+            <div class="footer-underline mb-3"></div>
+            <ul class="footer-news-list list-unstyled">
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/de-banh-pizza-mua-o-dau-0.webp" alt="news1" class="footer-news-img me-3">
+                  <span>Để bánh pizza mua ở đâu đảm bảo chất lượng?</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/cach-lam-pizza-xot-mayonnaise-4.webp" alt="news2"
+                    class="footer-news-img me-3">
+                  <span>Cách làm pizza xốt Mayonnaise thơm béo...</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/tim-hieu-cac-loai-pasta-0.jpg" alt="news3" class="footer-news-img me-3">
+                  <span>Pasta là món ăn của nước nào? Pasta và...</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/tiet-lo-tinh-cach-qua-cach-an-pizza-0.jpg" alt="news4"
+                    class="footer-news-img me-3">
+                  <span>Tiết lộ tính cách qua cách ăn pizza cực thú vị</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/faq.js"></script>
+</body>
+
+</html>
