@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ thống cửa hàng</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Vendor -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="assets/css/hethongcuahang.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+</head>
+<body>
+  <header id="header" class="header">
+    <div class="header-top ">
+      <p>Chào mừng bạn đến với Dola Food!</p>
+    </div>
+    <div class="header-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Mobile Menu Toggle -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="col-lg-2 col-xl-2 col-12 image-effect">
+            <a href="">
+              <img src="assets/images/logo.webp" alt="Dola Food Logo">
+            </a>
+          </div>
+          <div class="col-lg-3 col-xl-4  search-header">
+            <form action="" class="search-form header-search-form input-group search-bar">
+              <input type="text" placeholder="Tìm kiếm món ăn, nhà hàng..."
+                class="search-input input-group-field auto-search search-auto form-control" />
+              <button type="submit" class="search-button "><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <div class="col-lg-7 col-xl-6">
+
+            <ul class="d-flex align-items-center justify-content-end list-unstyled">
+              <li>
+                <div class="d-flex align-items-center">
+                  <img src="assets/images/delivery.webp" width="50" height="50" alt="User Icon">
+                  <div class="ms-2 delivery-info">
+                    <span>Giao hàng miễn phí</span>
+                    <p class="mb-0">1900 6750</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex align-items-center icon ms-2">
+                  <p><i class="fa-solid fa-user"></i></p>
+              </li>
+              <li>
+                <div class="d-flex align-items-center icon ms-2">
+                  <p><i class="fa-solid fa-cart-shopping"></i></p>
+                  <span class="cart-count">0</span>
+              </li>
+              <li>
+
+                <a href="#" class=" custom-btn">Đặt món online</a>
+
+              </li>
+              <li>
+                <a href="#" class=" custom-btn">Đặt bàn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu">
+      <div class="container">
+        <div class="header-menu-des">
+          <div class="header-nav">
+            <nav class="navbar navbar-expand-lg custom-navbar">
+              <div class="container">
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">
+                        Trang chủ
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="gioithieu.html">
+                        Giới thiệu
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sản phẩm
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Sản phẩm A</a>
+                        <a class="dropdown-item" href="#">Sản phẩm B</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Tất cả sản phẩm</a>
+                      </div>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="tintuc.html">
+                        Tin tức
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="lienhe.html">
+                        Liên hệ
+                      </a>
+                    </li>
+                    <li class="nav-item active-btn">
+                      <a class="nav-link" href="#">
+                        Câu hỏi thường gặp
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Hệ thống của hàng
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="datlich.html">
+                        Đặt bàn
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb-custom">
+      <div class="container">
+        <a href="index.html">Trang chủ</a> <span>&gt;</span> <span class="active">Hệ thống cửa hàng</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page page-he-thong">
+      <div class="container">
+        <div class="page-title d-none">
+          <h1 class="title-head">Hệ thống cửa hàng</h1>
+        </div>
+        <div class="hethong-info">
+          
+          <div class="row row-fix">
+            <div class="col-12 col-md-6 col-lg-3 col-fix">
+              <div class="item">
+                <div class="thump">
+                  <img src="//bizweb.dktcdn.net/100/510/571/themes/941527/assets/icon_hethong1.png?1727255430829" alt="Cửa hàng">
+                </div>
+                <span>Cửa hàng <b>50+</b> </span>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 col-fix">
+              <div class="item">
+                <div class="thump">
+                  <img src="//bizweb.dktcdn.net/100/510/571/themes/941527/assets/icon_hethong2.png?1727255430829" alt="Tỉnh thành">
+                </div>
+                <span>Tỉnh thành <b>30+</b> </span>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 col-fix">
+              <div class="item">
+                <div class="thump">
+                  <img src="//bizweb.dktcdn.net/100/510/571/themes/941527/assets/icon_hethong3.png?1727255430829" alt="Văn phòng đại diện">
+                </div>
+                <span>Văn phòng đại diện <b>3</b> </span>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 col-fix">
+              <div class="item">
+                <div class="thump">
+                  <img src="//bizweb.dktcdn.net/100/510/571/themes/941527/assets/icon_hethong4.png?1727255430829" alt="Nhân sự">
+                </div>
+                <span>Nhân sự <b>500+</b> </span>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        <div class="block-background">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 d-none">
+            <div class="page-title category-title">
+              <h1 class="title-head d-none"><a href="#"></a></h1>
+            </div>
+            <div class="content-page rte">
+    
+            </div>
+          </div>
+          
+          <div class="col-md-5 col-lg-4 col-md-12 col-12 col-left">
+            <div class="option-chos option-chos1">
+              <div class="group-option">
+                <div class="group-city group">
+                  <span class="title">Tỉnh / Thành</span>
+                  <select id="city" class="select">
+                    <option value="ALL" selected="">Chọn tỉnh thành</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                    <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                    <option value="Bình Dương">Bình Dương</option>
+                    <option value="Cần Thơ">Cần Thơ</option>
+                    
+    
+                  </select>
+                </div>
+                <div class="group-city group">
+                  <span class="title">Nhập tên cửa hàng</span>
+                  <input onkeyup="myFunctionName()" id="myName" placeholder="Nhập tên cửa hàng" type="text" class="form-control  form-control-lg">
+                </div>
+                <div class="group-district group d-none">
+                  <select id="district" class="select" disabled="">
+                    <option value="ALL">Chọn quận/huyện</option>
+                  </select>
+                </div>
+              </div>
+    
+            </div>
+            <div class="option-chos" id="option-chos">
+              <div class="info-store info-block" id="info-store"><div data-local="Hồ Chí Minh" data-district="Quận 11" class="store-list"><span class="name-cuahang">Dola Sài Gòn</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> Tầng 3, 70 Lữ Gia, Phường 15, Quận 11, Thành phố Hồ Chí Minh</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.518261716127!2d106.65095971411642!3d10.771561562230547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4964c382dd%3A0xb61978d7651a271f!2zUGjhuqduIG3hu4FtIHF14bqjbiBsw70gYsOhbiBow6BuZyBTYXBvIC0gSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2s!4v1649778540165!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	<div data-local="Bình Dương" data-district="TP.Thủ Dầu Một" class="store-list"><span class="name-cuahang">Dola Bình Dương</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> 169 / 34 Nguyễn Hữu Cảnh, Phường Phú Thọ, TP.Thủ Dầu Một, Tỉnh Bình Dương</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.9413500336022!2d106.66983361411785!3d10.967799658632787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1f5ea2844d1%3A0x68ff2239eeb3a9a9!2zMTY5IE5ndXnhu4VuIEjhu691IEPhuqNuaCwgUGjDuiBUaOG7jSwgVGjhu6cgROG6p3UgTeG7mXQsIELDrG5oIETGsMahbmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1649778686066!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	<div data-local="Cần Thơ" data-district="Quận Ninh Kiều" class="store-list"><span class="name-cuahang">Dola Cần Thơ</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> 81 đường Phan Huy Chú, KDC Thới Nhựt I, Phường An Khánh, Quận Ninh Kiều, Tp Cần Thơ</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.7286179369694!2d105.7567164141113!3d10.039238575113611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895e8b677aa1%3A0xd73b3c9a031d237f!2zS0RDIFRo4bubaSBOaOG7sXQ!5e0!3m2!1svi!2s!4v1649778804218!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	<div data-local="Hà Nội" data-district="Quận Ba Đình" class="store-list"><span class="name-cuahang">Dola Hà Nội</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> Tầng 6 - 266 Đội Cấn, Phường Liễu Giai, Quận Ba Đình, Hà Nội</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0889927657763!2d105.8402373144074!3d21.029124893142946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5be62341c1%3A0x6eaeebe47b93fe04!2zVMOyYSBuaMOgIHPhu5EgNSDEkGnhu4duIEJpw6puIFBo4bun!5e0!3m2!1svi!2s!4v1648984122910!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	<div data-local="Đà Nẵng" data-district="Quận Hải Châu" class="store-list"><span class="name-cuahang">Dola Đà Nẵng</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> 181 đường Huỳnh Tấn Phát, Phường Hoà Cường Nam, Quận Hải Châu, TP Đà Nẵng</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.610608676567!2d108.21247971416946!3d16.03377334464764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219ecd6d00127%3A0x5e1f8719efd14c01!2zMTgxIEh14buzbmggVOG6pW4gUGjDoXQsIEhvw6AgQ8aw4budbmcgTmFtLCBI4bqjaSBDaMOidSwgxJDDoCBO4bq1bmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1649778942084!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	<div data-local="Hà Nội" data-district="Quận Cầu Giấy" class="store-list"><span class="name-cuahang">Dola Hoàng Quốc Việt</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> 38 Hoàng Quốc Việt, Phường Nghĩa Tân, Quận Cầu Giấy, Hà Nội</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.665705597794!2d105.78940821424565!3d21.046057892565063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3048cf1bc9%3A0xf383d5c388f26254!2zMzggSG_DoG5nIFF14buRYyBWaeG7h3QsIE5naMSpYSBUw6JuLCBD4bqndSBHaeG6pXksIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1650036591243!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	<div data-local="Hà Nội" data-district="Quận Cầu Giấy" class="store-list"><span class="name-cuahang">Dola Hoàng Đạo Thúy</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> 150 Hoàng Đạo Thúy, Phường Trung Hòa, Quận Cầu Giấy, Hà Nội</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6317401375168!2d105.80027631424484!3d21.007393993884758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aca10d52e8d7%3A0x27fe5187e5401dac!2zMTUwIEhvw6BuZyDEkOG6oW8gVGjDunksIFRydW5nIEhvw6AsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1650036686730!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	<div data-local="Hà Nội" data-district="Quận Hà Đông" class="store-list"><span class="name-cuahang">Dola Trần Phú</span><span class="store-name"><b><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11.0008 0C6.60743 0 3.0332 3.57423 3.0332 7.96752C3.0332 13.4197 10.1634 21.4239 10.467 21.762C10.7521 22.0796 11.2499 22.079 11.5346 21.762C11.8381 21.4239 18.9683 13.4197 18.9683 7.96752C18.9683 3.57423 15.3941 0 11.0008 0ZM11.0008 11.9762C8.79037 11.9762 6.99213 10.1779 6.99213 7.96752C6.99213 5.75712 8.79041 3.95888 11.0008 3.95888C13.2111 3.95888 15.0094 5.75717 15.0094 7.96757C15.0094 10.178 13.2111 11.9762 11.0008 11.9762Z" fill="#949494"></path></svg></b> 95 Trần Phú, Phường Văn Quán, Quận Hà Đông, Hà Nội</span><span class="store-phone"><b><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><g clip-path="url(#clip0_690_883)"><path d="M18.0945 14.616C16.8259 13.531 15.5385 12.8737 14.2854 13.9571L13.5372 14.6119C12.9898 15.0872 11.972 17.3081 8.03667 12.7811C4.10219 8.25986 6.44354 7.5559 6.99179 7.08468L7.7441 6.42907C8.99058 5.34322 8.52018 3.97627 7.62117 2.56917L7.07866 1.71688C6.17556 0.313051 5.19214 -0.6089 3.94238 0.475314L3.26711 1.06536C2.71475 1.46774 1.17079 2.77569 0.796277 5.26045C0.345545 8.24183 1.7674 11.6559 5.02496 15.4019C8.27842 19.1495 11.4639 21.032 14.4813 20.9992C16.989 20.9721 18.5035 19.6265 18.9772 19.1372L19.6549 18.5464C20.9014 17.463 20.1269 16.3599 18.8575 15.2724L18.0945 14.616Z" fill="#949494"></path></g><defs><clipPath id="clip0_690_883"><rect width="21" height="21" fill="white"></rect></clipPath></defs></svg></b> <a title="1900 6750" class="phone-url" href="tel:1900 6750">1900 6750</a></span><a href="javascript:void(0)" class="store-url" title="Chỉ đường" data-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6566429892996!2d106.67554851411637!3d10.760923462423836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1d9884721d%3A0x8dc3d6a4115c6305!2zOTUgVHLhuqduIFBow7osIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1650036943196!5m2!1svi!2s"><b><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M11.102 17L9.68591 9.31409L2 7.89796L18 1L11.102 17Z" stroke="black" stroke-miterlimit="10"></path></svg></b>Chỉ đường</a></div>	</div>
+            </div>
+          </div>
+          <div class="col-md-7 col-lg-8 col-md-12 col-12 col-right">
+            <div class="wrapcontact">
+              <div class="iFrameMap">
+                <div id="map_contact" class="map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3919.5692504136196!2d106.696811!3d10.767643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1573f5d56f%3A0x300ecbf0d5ab5050!2zMTAgVHLhu4tuaCBWxINuIEPhuqVuLCBQaMaw4budbmcgQ-G6p3Ugw5RuZyBMw6NuaCwgUXXhuq1uIDEsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2sus!4v1647421770627!5m2!1svi!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>						</div>
+              </div>
+            </div>
+            <div class="pagebody d-none">
+              <iframe src="" width="100%" height="500"></iframe>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer bg-green text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <!-- VỀ CHÚNG TÔI -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="footer-title mb-2">VỀ CHÚNG TÔI</h4>
+              <div class="footer-underline mb-3"></div>
+              <p class="footer-desc mb-4">
+                Chào mừng bạn đến với Dola Food - điểm đến lý tưởng cho những người yêu thưởng thức pizza tại thành
+                phố!
+                Dola Food tự hào là địa chỉ pizza hàng đầu, nổi tiếng với chất lượng món ăn tuyệt vời, dịch vụ tận tâm
+                và mức độ hài lòng cao từ phía khách hàng.
+              </p>
+              <h5 class="footer-title mb-2" style="font-size: 1.1rem;">HÌNH THỨC THANH TOÁN</h5>
+              <div class="footer-underline mb-3"></div>
+              <div class="d-flex gap-2 align-items-center">
+                <div class="payment-method text-center">
+                  <img src="assets/images/payment_1.webp" alt="Tiền mặt" width="48">
+                </div>
+                <div class="payment-method text-center">
+                  <img src="assets/images/payment_2.webp" alt="Chuyển khoản" width="48">
+                </div>
+                <div class="payment-method text-center">
+                  <img src="assets/images/payment_3.webp" alt="Visa/Master" width="48">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- THÔNG TIN -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="footer-title mb-2">THÔNG TIN</h4>
+              <div class="footer-underline mb-3"></div>
+              <p class="footer-desc mb-3">
+                Công ty TNHH Dola Food chuyên phục vụ trong lĩnh vực nhà hàng. Mã số thuế: 123456xxxx - Ngày cấp:
+                13/05/2024 - Nơi cấp: Sở kế hoạch và đầu tư TPHCM - Website: dola-food.mysapo.net
+              </p>
+              <ul class="footer-contact list-unstyled mb-4">
+                <li class="d-flex align-items-center mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-map-marker-alt"></i></span>
+                  <span>70 Lữ Gia, Phường 15, Quận 11, TP.HCM</span>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-clock"></i></span>
+                  <span>
+                    8h - 22h<br>
+                    Từ thứ 2 đến chủ nhật
+                  </span>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-phone"></i></span>
+                  <span>1900 6750</span>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                  <span class="footer-icon me-2"><i class="fas fa-envelope"></i></span>
+                  <span>support@sapo.vn</span>
+                </li>
+              </ul>
+              <h6 class="footer-title mb-2" style="font-size: 1.1rem;">THEO DÕI CHÚNG TÔI</h6>
+              <div class="footer-underline mb-3"></div>
+              <div class="footer-social d-flex gap-3">
+                <a href="#" class="footer-social-icon"><img src="assets/images/zalo-icon.png" alt="Zalo" width="22"></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CHÍNH SÁCH VÀ HƯỚNG DẪN -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100">
+            <h4 class="footer-title mb-2">CHÍNH SÁCH VÀ HƯỚNG DẪN</h4>
+            <div class="footer-underline mb-3"></div>
+            <ul class="footer-menu-list ps-0">
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Chính sách thành
+                  viên</a></li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Chính sách thanh
+                  toán</a></li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Bảo mật thông tin cá
+                  nhân</a></li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Hướng dẫn mua
+                  hàng</a>
+              </li>
+              <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Hướng dẫn thanh
+                  toán</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- TIN TỨC MỚI -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-widget h-100">
+            <h4 class="footer-title mb-2">TIN TỨC MỚI</h4>
+            <div class="footer-underline mb-3"></div>
+            <ul class="footer-news-list list-unstyled">
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/de-banh-pizza-mua-o-dau-0.webp" alt="news1" class="footer-news-img me-3">
+                  <span>Để bánh pizza mua ở đâu đảm bảo chất lượng?</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/cach-lam-pizza-xot-mayonnaise-4.webp" alt="news2"
+                    class="footer-news-img me-3">
+                  <span>Cách làm pizza xốt Mayonnaise thơm béo...</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/tim-hieu-cac-loai-pasta-0.jpg" alt="news3" class="footer-news-img me-3">
+                  <span>Pasta là món ăn của nước nào? Pasta và...</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                  <img src="assets/images/tiet-lo-tinh-cach-qua-cach-an-pizza-0.jpg" alt="news4"
+                    class="footer-news-img me-3">
+                  <span>Tiết lộ tính cách qua cách ăn pizza cực thú vị</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/hethongcuahang.js"></script>
+</body>
+</html>
