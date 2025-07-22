@@ -12,6 +12,7 @@
   font-weight: 500;
 }
 
+
 .header-center {
   padding: 5px 0
 }
@@ -70,6 +71,15 @@
   margin-left: 5px;
 }
 
+.ul-contact {
+  margin-right: -5px;
+  margin-left: -5px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+} 
+
 .header-menu {
   background-color: #006a31;
 }
@@ -125,8 +135,62 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 1200px) {
+  .delivery-info{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .image-effect{
+    display: flex;
+    justify-content: center;
+  }
+  .image-effect a{
+    width: 160px;
+    height: 100%;
+    padding: 10px 0;
+  }
+  .header-menu{
+    display: none;
+  }
+  .icon-cus{
+    position: absolute;
+    top: 50px;
+    border-radius: 50%;
+    z-index: 9;
+    left: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background: #ddd;
+  }
+  .li-cart{
+    position: absolute;
+    top: 50px;
+    right: 40px;
+  }
+}
+@media (max-width: 991px) and (max-width: 767px) {
+  .icon-cus {
+      left: 15px;
+  }
+}
+@media (max-width: 360px) {
+  .icon-cus {
+    left: 30px;
+    top: 50px;
+  }
+}
+
+
 /* Danh Mục Nổi Bật */
-b {
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header b {
   font-family: lobster;
   color: #e31837;
   display: block;
@@ -260,11 +324,12 @@ b {
 
 }
 
-.section-product-about .swiper{
+.section-product-about .swiper {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .section-product-about .swiper-container {
   margin-left: auto;
   margin-right: auto;
@@ -273,9 +338,8 @@ b {
   list-style: none;
   padding: 0;
 }
-.section-product-about .swiper-wrapper {
-  
-}
+
+.section-product-about .swiper-wrapper {}
 
 .section-product-about .swiper-slide {
   width: 100%;
@@ -577,7 +641,7 @@ b {
 
   .footer-desc {
     font-size: 15px;
-  } 
+  }
 
   .menu-link {
     font-size: 15px;
@@ -1231,11 +1295,11 @@ body {
     top: 0;
     margin-bottom: 16px;
   }
-  
+
   body {
     scroll-padding-top: 60px;
   }
-  
+
   .food-menu-tabs .nav-link {
     font-size: 0.9rem;
     padding: 8px 12px;
@@ -1246,12 +1310,12 @@ body {
   .food-menu-tabs {
     margin-bottom: 12px;
   }
-  
+
   .food-menu-tabs .nav-link {
     font-size: 0.8rem;
     padding: 6px 8px;
   }
-  
+
   body {
     scroll-padding-top: 50px;
   }
@@ -1273,7 +1337,7 @@ body {
 .section-header p {
   font-size: 30px;
   font-weight: 700;
-  color:  #e31837
+  color: #e31837
 }
 
 /* New Food Menu Styles */
@@ -1475,6 +1539,7 @@ body {
 
 /* Hide swiper navigation on desktop since we use grid layout */
 @media (min-width: 768px) {
+
   .food-menu-swiper .swiper-button-next,
   .food-menu-swiper .swiper-button-prev {
     display: none;
@@ -1486,29 +1551,29 @@ body {
   .food-menu-item {
     margin-bottom: 0;
   }
-  
+
   .food-menu-image {
     width: 40%;
     min-width: 100px;
     max-width: 150px;
   }
-  
+
   .food-menu-content {
     padding: 16px;
   }
-  
+
   .food-title {
     font-size: 1.1rem;
   }
-  
+
   .food-desc {
     font-size: 0.9rem;
   }
-  
+
   .price-value {
     font-size: 1rem;
   }
-  
+
   .add-btn {
     padding: 6px 16px;
     font-size: 0.9rem;
@@ -1521,39 +1586,39 @@ body {
     min-width: 80px;
     max-width: 120px;
   }
-  
+
   .food-menu-content {
     padding: 12px;
   }
-  
+
   .food-title {
     font-size: 1rem;
   }
-  
+
   .food-desc {
     font-size: 0.85rem;
   }
-  
+
   .food-more {
     font-size: 0.8rem;
     margin-bottom: 12px;
   }
-  
+
   .price-value {
     font-size: 0.95rem;
   }
-  
+
   .add-btn {
     padding: 5px 12px;
     font-size: 0.85rem;
   }
-  
+
   .food-menu-swiper .swiper-button-next,
   .food-menu-swiper .swiper-button-prev {
     width: 35px;
     height: 35px;
   }
-  
+
   .food-menu-swiper .swiper-button-next:after,
   .food-menu-swiper .swiper-button-prev:after {
     font-size: 14px;
@@ -1566,34 +1631,34 @@ body {
     min-width: 70px;
     max-width: 100px;
   }
-  
+
   .food-menu-content {
     padding: 10px;
   }
-  
+
   .food-title {
     font-size: 0.95rem;
     margin-bottom: 6px;
   }
-  
+
   .food-desc {
     font-size: 0.8rem;
     margin-bottom: 8px;
   }
-  
+
   .food-more {
     font-size: 0.75rem;
     margin-bottom: 10px;
   }
-  
+
   .price-label {
     font-size: 0.75rem;
   }
-  
+
   .price-value {
     font-size: 0.9rem;
   }
-  
+
   .add-btn {
     padding: 4px 10px;
     font-size: 0.8rem;
@@ -1696,7 +1761,8 @@ body {
   color: #fff;
   border-radius: 10px;
 }
-.view-more-btn i{
+
+.view-more-btn i {
   margin-left: 10px;
 }
 
@@ -1743,7 +1809,7 @@ body {
     font-size: 0.95rem;
     gap: 8px;
   }
-  
+
   .view-more-btn i {
     font-size: 0.9rem;
   }
@@ -1755,7 +1821,7 @@ body {
     font-size: 0.9rem;
     gap: 6px;
   }
-  
+
   .view-more-btn i {
     font-size: 0.85rem;
   }
@@ -1767,21 +1833,24 @@ body {
   background: #fff;
   padding: 60px 0 40px 0;
 }
+
 .news-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   height: 100%;
   text-align: left;
 }
+
 .news-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
+
 .news-img {
   width: 100%;
   height: 180px;
@@ -1789,12 +1858,14 @@ body {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
+
 .news-content {
   padding: 18px 16px 16px 16px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
+
 .news-title {
   font-size: 1.15rem;
   font-weight: 700;
@@ -1808,12 +1879,14 @@ body {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 .news-date {
   color: #e31837;
   font-size: 0.8rem;
   font-weight: 500;
   margin-bottom: 8px;
 }
+
 .news-desc {
   font-size: 0.98rem;
   color: #000;
@@ -1832,11 +1905,13 @@ body {
   width: 100%;
   padding: 10px 0 40px 0;
 }
+
 .news-swiper .swiper-slide {
   height: auto;
   display: flex;
   align-items: stretch;
 }
+
 .news-swiper .news-card {
   height: 100%;
 }
@@ -1846,50 +1921,61 @@ body {
     height: 140px;
   }
 }
+
 @media (max-width: 767.98px) {
   .news-img {
     height: 120px;
   }
+
   .news-title {
     font-size: 1rem;
     min-height: 38px;
   }
+
   .news-desc {
     font-size: 0.92rem;
     min-height: 36px;
     max-height: 36px;
   }
 }
+
 /* Tin tức */
 .customer-review-section {
   margin: 60px 0;
 }
+
 .customer-title span {
   color: #05743b;
   font-size: 2.2rem;
   font-weight: 700;
 }
+
 .customer-desc {
   font-size: 1.1rem;
   margin: 18px 0 30px 0;
 }
+
 .customer-stats {
   gap: 40px;
   margin-bottom: 20px;
 }
+
 .stat-item {
   margin-right: 30px;
 }
+
 .stat-number {
   color: #e31837;
   font-size: 2.5rem;
   font-weight: 700;
 }
+
 .stat-label {
   font-size: 1.1rem;
   font-weight: 600;
   color: #222;
 }
+
 .customer-card {
   background: #05743b;
   color: #fff;
@@ -1900,6 +1986,7 @@ body {
   min-height: 180px;
   text-align: justify;
 }
+
 .customer-avatar {
   width: 64px;
   height: 64px;
@@ -1907,60 +1994,75 @@ body {
   object-fit: contain;
   margin-right: 10px;
 }
+
 .customer-name {
   font-size: 1.2rem;
   font-weight: 700;
 }
+
 .customer-job {
   font-size: 1rem;
   color: #b3ffcc;
   margin-bottom: 10px;
 }
+
 .customer-comment {
   font-size: 1rem;
   color: #fff;
   margin-top: 8px;
 }
+
 .customer-swiper-mobile {
   display: none;
 }
+
 @media (max-width: 767.98px) {
   .customer-swiper {
     display: none;
   }
+
   .customer-swiper-mobile {
     display: block;
   }
+
   .customer-review-section .row {
     flex-direction: column;
   }
+
   .customer-title span {
     font-size: 1.5rem;
   }
+
   .stat-number {
     font-size: 1.5rem;
   }
 }
+
 /* Tại sao chọn chung toi */
 .why-choose-section {
   margin: 60px 0;
 }
+
 .why-title {
   font-family: 'Lobster', cursive;
 }
+
 .why-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.why-swiper{
+
+.why-swiper {
   width: 100%;
   height: 100%;
 }
-.why-swiper .swiper-wrapper{
- width: 100%;
- overflow: hidden;
+
+.why-swiper .swiper-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
+
 .why-icon {
   width: 120px;
   height: 120px;
@@ -1971,11 +2073,13 @@ body {
   justify-content: center;
   margin-bottom: 10px;
 }
+
 .why-icon img {
   width: 64px;
   height: 64px;
   object-fit: contain;
 }
+
 .why-text {
   color: #05743b;
   font-size: 1.25rem;
@@ -1983,15 +2087,18 @@ body {
   text-align: center;
   line-height: 1.3;
 }
+
 @media (max-width: 767.98px) {
   .why-icon {
     width: 80px;
     height: 80px;
   }
+
   .why-icon img {
     width: 40px;
     height: 40px;
   }
+
   .why-text {
     font-size: 1rem;
   }
@@ -2009,6 +2116,7 @@ body {
   justify-content: center;
   padding: 60px 0 60px 0;
 }
+
 .newsletter-bg {
   position: absolute;
   inset: 0;
@@ -2016,13 +2124,27 @@ body {
   height: 100%;
   z-index: 1;
 }
+
 .newsletter-leaf {
   position: absolute;
   opacity: 1;
   z-index: 2;
 }
-.leaf1 { left: 8%; top: 18%; width: 100%; height: 100%; }
-.leaf2 { left: 20%; top: 35%; width: 100%; height: 100%; }
+
+.leaf1 {
+  left: 8%;
+  top: 18%;
+  width: 100%;
+  height: 100%;
+}
+
+.leaf2 {
+  left: 20%;
+  top: 35%;
+  width: 100%;
+  height: 100%;
+}
+
 .newsletter-pizza {
   position: absolute;
   right: 4%;
@@ -2030,12 +2152,14 @@ body {
   width: 260px;
   z-index: 2;
 }
+
 .newsletter-content {
   position: relative;
   z-index: 10;
   width: 100%;
   text-align: center;
 }
+
 .newsletter-title {
   color: #fff;
   font-size: 2.8rem;
@@ -2043,11 +2167,13 @@ body {
   font-family: 'Quicksand', sans-serif;
   margin-bottom: 16px;
 }
+
 .newsletter-desc {
   color: #fff;
   font-size: 1.2rem;
   margin-bottom: 32px;
 }
+
 .newsletter-form {
   display: flex;
   justify-content: center;
@@ -2055,6 +2181,7 @@ body {
   margin: 0 auto;
   gap: 0;
 }
+
 .newsletter-input {
   flex: 1;
   padding: 8px 18px;
@@ -2064,6 +2191,7 @@ body {
   outline: none;
   background-color: #fff;
 }
+
 .newsletter-btn {
   background: #05743b;
   color: #fff;
@@ -2075,25 +2203,55 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .newsletter-btn:hover {
   background: #ccc;
   color: #fff;
 }
+
 @media (max-width: 991.98px) {
-  .newsletter-title { font-size: 2rem; }
-  .newsletter-pizza { width: 180px; }
+  .newsletter-title {
+    font-size: 2rem;
+  }
+
+  .newsletter-pizza {
+    width: 180px;
+  }
 }
+
 @media (max-width: 767.98px) {
-  .newsletter-section { padding: 40px 0; }
-  .newsletter-title { font-size: 1.5rem; }
-  .newsletter-desc { font-size: 1rem; }
-  .newsletter-form { flex-direction: column; gap: 12px; }
-  .newsletter-input, .newsletter-btn {
+  .newsletter-section {
+    padding: 40px 0;
+  }
+
+  .newsletter-title {
+    font-size: 1.5rem;
+  }
+
+  .newsletter-desc {
+    font-size: 1rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newsletter-input,
+  .newsletter-btn {
     border-radius: 6px !important;
     width: 100%;
     font-size: 1rem;
     padding: 12px 14px;
   }
-  .newsletter-pizza { width: 120px; right: 2%; }
-  .newsletter-leaf { width: 30px !important; }
+
+  .newsletter-pizza {
+    width: 120px;
+    right: 2%;
+  }
+
+  .newsletter-leaf {
+    width: 30px !important;
+  }
 }
+

@@ -616,3 +616,25 @@ setInterval(() => {
   const product = getProductPurchased1MinuteAgo();
   if (product) showProductPopup(product);
 }, 20000);
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const openBtn = document.getElementById('openMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+
+  if (openBtn && closeBtn && menu && overlay) {
+    openBtn.addEventListener('click', function() {
+      menu.classList.add('active');
+      overlay.classList.add('active');
+    });
+    closeBtn.addEventListener('click', function() {
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+    overlay.addEventListener('click', function() {
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  }
+});
