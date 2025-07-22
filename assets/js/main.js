@@ -30,6 +30,29 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     },
   });
+  var featuredCategoriesSwiper = new Swiper('.featured-categories-swiper', {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.featured-categories-swiper .swiper-button-next',
+      prevEl: '.featured-categories-swiper .swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+    }
+
+  })
   // customer swiper
   var customerSwiper = new Swiper('.customer-swiper', {
     slidesPerView: 1,

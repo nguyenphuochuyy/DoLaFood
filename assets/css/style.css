@@ -78,7 +78,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
-} 
+}
 
 .header-menu {
   background-color: #006a31;
@@ -136,24 +136,28 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .delivery-info{
+  .delivery-info {
     font-size: 14px;
   }
 }
+
 @media screen and (max-width: 991.98px) {
-  .image-effect{
+  .image-effect {
     display: flex;
     justify-content: center;
   }
-  .image-effect a{
+
+  .image-effect a {
     width: 160px;
     height: 100%;
     padding: 10px 0;
   }
-  .header-menu{
+
+  .header-menu {
     display: none;
   }
-  .icon-cus{
+
+  .icon-cus {
     position: absolute;
     top: 50px;
     border-radius: 50%;
@@ -166,17 +170,20 @@
     display: flex;
     background: #ddd;
   }
-  .li-cart{
+
+  .li-cart {
     position: absolute;
     top: 50px;
     right: 40px;
   }
 }
+
 @media (max-width: 991px) and (max-width: 767px) {
   .icon-cus {
-      left: 15px;
+    left: 15px;
   }
 }
+
 @media (max-width: 360px) {
   .icon-cus {
     left: 30px;
@@ -214,42 +221,35 @@
   margin-right: 10px;
 }
 
-.category-item {
-  width: 25%;
-  margin-right: 10px;
-}
 
-.category-item:hover img {
-  transform: scale(1.1);
-  transition: all 0.8s linear;
-}
-
-.category-item a:hover {
-  background-color: #e31837;
-  color: #fff;
-}
-
-.category-item a {
-  border-radius: 5px;
+.featured-categories-swiper a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  background-color: #006a31;
+  background: #006a31;
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 122px;
 }
 
-.category-item h3 {
-  margin: 0 10px 0 0;
-  color: #fff;
-  font-size: 16px;
+.featured-categories-swiper h3 {
+    font-size: 16px;
+    margin-bottom: 0;
+    color: #fff;
+    margin-right: 10px;
 }
-
-.category-item img {
-  height: auto;
-  position: relative;
-  width: auto;
-  transition: all 0.8s linear;
-  max-width: 100px;
-  max-height: 100%;
+.thumb{
+  width: 120px;
+  height: 120px;
+  display: flex;
+  margin-left: 20px;
 }
-
+.thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 /* About Seaction */
 .about-section {
   margin-top: 50px;
@@ -2254,4 +2254,3 @@ body {
     width: 30px !important;
   }
 }
-
