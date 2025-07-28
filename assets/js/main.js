@@ -661,3 +661,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+  // User Dropdown Menu
+  const userDropdown = document.querySelector('.user-dropdown');
+  const userMenu = document.querySelector('.user-menu');
+  
+  if (userDropdown && userMenu) {
+    // Show menu on hover
+    userDropdown.addEventListener('mouseenter', function() {
+      userMenu.style.opacity = '1';
+      userMenu.style.visibility = 'visible';
+      userMenu.style.transform = 'translateY(0)';
+    });
+    
+    // Hide menu when mouse leaves
+    userDropdown.addEventListener('mouseleave', function() {
+      userMenu.style.opacity = '0';
+      userMenu.style.visibility = 'hidden';
+      userMenu.style.transform = 'translateY(-10px)';
+    });
+    
+    // Prevent menu from closing when hovering over menu items
+    userMenu.addEventListener('mouseenter', function() {
+      userMenu.style.opacity = '1';
+      userMenu.style.visibility = 'visible';
+      userMenu.style.transform = 'translateY(0)';
+    });
+    
+    userMenu.addEventListener('mouseleave', function() {
+      userMenu.style.opacity = '0';
+      userMenu.style.visibility = 'hidden';
+      userMenu.style.transform = 'translateY(-10px)';
+    });
+  }
