@@ -121,18 +121,24 @@ document.addEventListener('DOMContentLoaded', () => {
       prevEl: '.flash-sale-swiper .swiper-button-prev',
     },
     breakpoints: {
-      // Mobile (small screens) - 3 products
-      576: {
-        slidesPerView: 2,
+      // Mobile (small screens) - 1 slide
+      0: {
+        slidesPerView: 1,
         spaceBetween: 15,
       },
+      // Small screens - 1 slide
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      // Tablet (768px) - 3 slides
       768: {
         slidesPerView: 3,
         spaceBetween: 20,
       },
-      // Large screens - 5 products
+      // Large screens (1200px+) - 4 slides
       1200: {
-        slidesPerView: 5,
+        slidesPerView: 4,
         spaceBetween: 20,
       },
     },
@@ -489,6 +495,188 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Function to attach cart dropdown events
+  function attachCartEvents() {
+    // Cart dropdown quantity controls
+    const quantityButtons = document.querySelectorAll('.quantity-btn');
+    console.log('Found quantity buttons:', quantityButtons.length);
+    
+    quantityButtons.forEach((button, index) => {
+      console.log(`Attaching event to button ${index}:`, button);
+      // Remove existing event listeners to prevent duplication
+      button.removeEventListener('click', handleQuantityClick);
+      button.addEventListener('click', handleQuantityClick);
+    });
+
+    // Delete cart item functionality
+    const deleteButtons = document.querySelectorAll('.cart-item-note');
+    console.log('Found delete buttons:', deleteButtons.length);
+    
+    deleteButtons.forEach((button, index) => {
+      console.log(`Attaching event to delete button ${index}:`, button);
+      // Remove existing event listeners to prevent duplication
+      button.removeEventListener('click', handleDeleteClick);
+      button.addEventListener('click', handleDeleteClick);
+    });
+  }
+
+  // Handle quantity button clicks
+  function handleQuantityClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const button = e.target;
+    const isPlus = button.classList.contains('plus');
+    const quantityValue = button.parentElement.querySelector('.quantity-value');
+    const cartItemPrice = button.closest('.cart-item').querySelector('.cart-item-price');
+    
+    let currentQuantity = parseInt(quantityValue.textContent);
+    const unitPrice = 99000; // Giá đơn vị (có thể lấy từ data attribute)
+    
+    if (isPlus) {
+      currentQuantity++;
+    } else {
+      if (currentQuantity > 1) {
+        currentQuantity--;
+      }
+    }
+    
+    quantityValue.textContent = currentQuantity;
+    
+    // Cập nhật giá
+    const newPrice = (unitPrice * currentQuantity).toLocaleString('vi-VN');
+    cartItemPrice.textContent = newPrice + 'đ';
+    
+    // Cập nhật tổng tiền
+    updateCartTotal();
+    
+    console.log('Quantity updated:', currentQuantity);
+  }
+
+  // Handle delete button clicks
+  function handleDeleteClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const button = e.target;
+    const cartItem = button.closest('.cart-item');
+    cartItem.remove();
+    
+    // Cập nhật số lượng sản phẩm trong giỏ hàng
+    updateCartCount();
+    updateCartTotal();
+    
+    console.log('Item deleted');
+  }
+
+  // Update cart total
+  function updateCartTotal() {
+    const cartItems = document.querySelectorAll('.cart-item');
+    let total = 0;
+    
+    cartItems.forEach(item => {
+      const priceText = item.querySelector('.cart-item-price').textContent;
+      const price = parseInt(priceText.replace(/[^\d]/g, ''));
+      total += price;
+    });
+    
+    const totalElement = document.querySelector('.total-price');
+    if (totalElement) {
+      totalElement.textContent = total.toLocaleString('vi-VN') + 'đ';
+    }
+  }
+
+  // Update cart count
+  function updateCartCount() {
+    const cartItems = document.querySelectorAll('.cart-item');
+    const cartCountElement = document.querySelector('.cart-count');
+    
+    if (cartCountElement) {
+      cartCountElement.textContent = cartItems.length;
+    }
+  }
+
+  // Initialize cart events
+  attachCartEvents();
+  
+  // Event delegation for cart dropdown (backup method)
+  document.addEventListener('click', function(e) {
+    // Handle quantity buttons
+    if (e.target.classList.contains('quantity-btn')) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      console.log('Quantity button clicked via delegation:', e.target);
+      
+      const button = e.target;
+      const isPlus = button.classList.contains('plus');
+      const quantityValue = button.parentElement.querySelector('.quantity-value');
+      const cartItemPrice = button.closest('.cart-item').querySelector('.cart-item-price');
+      
+      if (!quantityValue || !cartItemPrice) {
+        console.error('Could not find required elements');
+        return;
+      }
+      
+      let currentQuantity = parseInt(quantityValue.textContent);
+      const unitPrice = 99000;
+      
+      if (isPlus) {
+        currentQuantity++;
+      } else {
+        if (currentQuantity > 1) {
+          currentQuantity--;
+        }
+      }
+      
+      quantityValue.textContent = currentQuantity;
+      
+      // Cập nhật giá
+      const newPrice = (unitPrice * currentQuantity).toLocaleString('vi-VN');
+      cartItemPrice.textContent = newPrice + 'đ';
+      
+      // Cập nhật tổng tiền
+      updateCartTotal();
+      
+      console.log('Quantity updated via delegation:', currentQuantity);
+    }
+    
+    // Handle delete buttons
+    if (e.target.classList.contains('cart-item-note')) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      console.log('Delete button clicked via delegation:', e.target);
+      
+      const cartItem = e.target.closest('.cart-item');
+      if (cartItem) {
+        cartItem.remove();
+        updateCartCount();
+        updateCartTotal();
+        console.log('Item deleted via delegation');
+      }
+    }
+  });
+  
+  // Re-attach events when cart content changes (for dynamic content)
+  const cartDropdown = document.querySelector('.cart-dropdown');
+  if (cartDropdown) {
+    // Use MutationObserver to watch for changes in cart content
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList') {
+          // Re-attach events when cart items are added/removed
+          setTimeout(attachCartEvents, 100);
+        }
+      });
+    });
+    
+    observer.observe(cartDropdown, {
+      childList: true,
+      subtree: true
+    });
+  }
+
   // User icon functionality
   const userIcon = document.querySelector('.fa-user');
 
@@ -694,3 +882,43 @@ document.addEventListener('DOMContentLoaded', function() {
       userMenu.style.transform = 'translateY(-10px)';
     });
   }
+
+  // Set active menu item based on current page
+  function setActiveMenuItem() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const menuItems = document.querySelectorAll('.navbar-nav .nav-item');
+    
+    menuItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (link) {
+        const href = link.getAttribute('href');
+        const dataPage = item.getAttribute('data-page');
+        
+        // Remove existing active class
+        item.classList.remove('active-btn');
+        
+        // Check if current page matches the link or data-page attribute
+        if (href === currentPage || dataPage === currentPage) {
+          item.classList.add('active-btn');
+        }
+        
+        // Special case for index.html (homepage)
+        if (currentPage === 'index.html' && (href === 'index.html' || dataPage === 'index.html')) {
+          item.classList.add('active-btn');
+        }
+        
+        // Special case for product pages
+        if (currentPage.includes('chitietsanpham') && (href === 'tatcasanpham.html' || dataPage === 'tatcasanpham.html')) {
+          item.classList.add('active-btn');
+        }
+        
+        // Special case for empty path (root)
+        if (currentPage === '' && (href === 'index.html' || dataPage === 'index.html')) {
+          item.classList.add('active-btn');
+        }
+      }
+    });
+  }
+
+  // Call the function when page loads
+  setActiveMenuItem();

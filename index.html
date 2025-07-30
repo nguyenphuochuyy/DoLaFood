@@ -22,6 +22,7 @@
   <!-- Main css -->
   <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/modal.css" />
 
 </head>
 
@@ -82,9 +83,49 @@
                 </div>
               </li>
               <li class="li-cart">
-                <div class=" icon ms-2">
+                <div class="icon ms-2 cart-dropdown-container">
                   <p><i class="fa-solid fa-cart-shopping"></i></p>
-                  <span class="cart-count">0</span>
+                  <span class="cart-count">1</span>
+                  
+                  <!-- Cart Dropdown -->
+                  <div class="cart-dropdown">
+                  
+                    
+                    <div class="cart-items">
+                      <!-- Cart Item -->
+                      <div class="cart-item">
+                        <img src="assets/images/pro1.webp" alt="Gà Giòn Xốt Tương Tỏi Hàn Quốc" class="cart-item-image">
+                        <div class="cart-item-details">
+                          <h6 class="cart-item-name">Gà Giòn Xốt Tương Tỏi Hàn Quốc</h6>
+                          <div class="cart-item-options">
+                            <span class="cart-item-size">3 miếng</span>
+                            <span class="cart-item-note">Xóa</span>
+                          </div>
+                          <div class="cart-item-quantity">
+                            <span>Số lượng</span>
+                            <div class="quantity-controls">
+                              <button class="quantity-btn minus">-</button>
+                              <span class="quantity-value">1</span>
+                              <button class="quantity-btn plus">+</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-item-price">99.000đ</div>
+                      </div>
+                    </div>
+                    
+                    <div class="cart-total">
+                      <div class="total-row">
+                        <span>Tổng tiền:</span>
+                        <span class="total-price">99.000đ</span>
+                      </div>
+                    </div>
+                    
+                    <div class="cart-actions">
+                      <button class="btn-checkout">Thanh toán</button>
+                    </div>
+                  </div>
+                </div>
               </li>
               <li >
                 <a href="tatcasanpham.html" class=" custom-btn d-none d-lg-inline-flex">Đặt món online</a>
@@ -106,49 +147,50 @@
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active-btn">
+                    <li class="nav-item active-btn" data-page="index.html">
                       <a class="nav-link" href="index.html">
                         Trang chủ
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" data-page="gioithieu.html">
                       <a class="nav-link" href="gioithieu.html">
                         Giới thiệu
                       </a>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <li class="nav-item dropdown" data-page="tatcasanpham.html">
+                      <a class="nav-link dropdown-toggle" href="tatcasanpham.html" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sản phẩm
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Sản phẩm A</a>
-                        <a class="dropdown-item" href="#">Sản phẩm B</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Tất cả sản phẩm</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Pizza</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Khai vị</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Mỳ Ý</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Salad</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Thức uống</a>
                       </div>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item" data-page="tintuc.html">
                       <a class="nav-link" href="tintuc.html">
                         Tin tức
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" data-page="lienhe.html">
                       <a class="nav-link" href="lienhe.html">
                         Liên hệ
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">
+                    <li class="nav-item" data-page="faq.html">
+                      <a class="nav-link" href="faq.html">
                         Câu hỏi thường gặp
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        Hệ thống của hàng
+                    <li class="nav-item" data-page="hethongcuahang.html">
+                      <a class="nav-link" href="hethongcuahang.html">
+                        Hệ thống cửa hàng
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" data-page="datban.html">
                       <a class="nav-link" href="datlich.html">
                         Đặt bàn
                       </a>
@@ -2214,6 +2256,71 @@
     <div>
     </div>
   </main>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="product-modal">
+    <div class="product-modal-content">
+      <div class="product-modal-header">
+        <h4 class="product-modal-title">Tùy chọn món ăn</h4>
+        <button class="product-modal-close" id="closeModal">&times;</button>
+      </div>
+      
+      <div class="product-modal-body">
+        <div class="product-info">
+          <div class="product-image">
+            <img id="modalProductImage" src="" alt="Product Image">
+          </div>
+          <div class="product-details">
+            <h5 id="modalProductName" class="product-name"></h5>
+            <div class="product-price">
+              <span id="modalProductPrice" class="price-value"></span>
+            </div>
+          </div>
+        </div>
+        
+        <hr class="product-divider">
+        
+        <div class="product-options">
+          <div class="option-section">
+            <p class="option-label">Thông tin sản phẩm đang cập nhật</p>
+            <div class="option-group">
+              <label class="option-label">Loại:</label>
+              <div class="option-buttons">
+                <button class="option-btn active" data-value="3 miếng">
+                  <span class="check-icon">✔</span> 3 miếng
+                </button>
+                <button class="option-btn" data-value="5 miếng">
+                  <span class="check-icon" style="display: none;">✔</span> 5 miếng
+                </button>
+                <button class="option-btn" data-value="9 miếng">
+                  <span class="check-icon" style="display: none;">✔</span> 9 miếng
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="notes-section">
+            <label class="option-label">Ghi chú:</label>
+            <textarea id="productNotes" class="notes-input" placeholder="Ghi chú cho món ăn"></textarea>
+          </div>
+        </div>
+        
+        <hr class="product-divider">
+        
+        <div class="product-actions">
+          <div class="quantity-section">
+            <div class="quantity-controls">
+              <button class="quantity-btn minus" id="decreaseQuantity">-</button>
+              <span class="quantity-value" id="modalQuantity">1</span>
+              <button class="quantity-btn plus" id="increaseQuantity">+</button>
+            </div>
+          </div>
+          <button class="add-to-cart-btn" id="addToCartBtn">THÊM VÀO GIỎ HÀNG</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -2221,7 +2328,158 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
+// Product Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('productModal');
+  const closeModal = document.getElementById('closeModal');
+  const addButtons = document.querySelectorAll('.btn-add');
+  const decreaseBtn = document.getElementById('decreaseQuantity');
+  const increaseBtn = document.getElementById('increaseQuantity');
+  const quantityDisplay = document.getElementById('modalQuantity');
+  const addToCartBtn = document.getElementById('addToCartBtn');
+  const optionButtons = document.querySelectorAll('.option-btn');
+  const notesInput = document.getElementById('productNotes');
 
+  let currentQuantity = 1;
+  let selectedOption = '3 miếng';
+
+  // Open modal when clicking on "Thêm" button
+  addButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Get product information from the card
+      const productCard = this.closest('.product-card');
+      const productImage = productCard.querySelector('.product-img').src;
+      const productName = productCard.querySelector('.product-title').textContent;
+      const productPrice = productCard.querySelector('.product-price b').textContent;
+      
+      // Populate modal with product information
+      document.getElementById('modalProductImage').src = productImage;
+      document.getElementById('modalProductName').textContent = productName;
+      document.getElementById('modalProductPrice').textContent = productPrice;
+      
+      // Reset modal state
+      currentQuantity = 1;
+      quantityDisplay.textContent = currentQuantity;
+      selectedOption = '3 miếng';
+      notesInput.value = '';
+      
+      // Reset option buttons
+      optionButtons.forEach(btn => {
+        btn.classList.remove('active');
+        const checkIcon = btn.querySelector('.check-icon');
+        if (checkIcon) {
+          checkIcon.style.display = 'none';
+        }
+      });
+      
+      // Set first option as active
+      optionButtons[0].classList.add('active');
+      const firstCheckIcon = optionButtons[0].querySelector('.check-icon');
+      if (firstCheckIcon) {
+        firstCheckIcon.style.display = 'inline';
+      }
+      
+      // Show modal
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal
+  function closeModalFunction() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  closeModal.addEventListener('click', closeModalFunction);
+
+  // Close modal when clicking outside
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModalFunction();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModalFunction();
+    }
+  });
+
+  // Quantity controls
+  decreaseBtn.addEventListener('click', function() {
+    if (currentQuantity > 1) {
+      currentQuantity--;
+      quantityDisplay.textContent = currentQuantity;
+    }
+  });
+
+  increaseBtn.addEventListener('click', function() {
+    currentQuantity++;
+    quantityDisplay.textContent = currentQuantity;
+  });
+
+  // Option selection
+  optionButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      optionButtons.forEach(btn => {
+        btn.classList.remove('active');
+        const checkIcon = btn.querySelector('.check-icon');
+        if (checkIcon) {
+          checkIcon.style.display = 'none';
+        }
+      });
+      
+      // Add active class to clicked button
+      this.classList.add('active');
+      selectedOption = this.getAttribute('data-value');
+      
+      // Show check icon for active button
+      const checkIcon = this.querySelector('.check-icon');
+      if (checkIcon) {
+        checkIcon.style.display = 'inline';
+      }
+    });
+  });
+
+  // Add to cart functionality
+  addToCartBtn.addEventListener('click', function() {
+    const productName = document.getElementById('modalProductName').textContent;
+    const productPrice = document.getElementById('modalProductPrice').textContent;
+    const notes = notesInput.value.trim();
+    
+    // Create cart item object
+    const cartItem = {
+      name: productName,
+      price: productPrice,
+      quantity: currentQuantity,
+      option: selectedOption,
+      notes: notes,
+      image: document.getElementById('modalProductImage').src
+    };
+    
+    // Here you would typically add the item to cart
+    // For now, we'll just show an alert and close the modal
+    console.log('Added to cart:', cartItem);
+    
+    // Show success message
+    alert(`Đã thêm ${currentQuantity} ${productName} vào giỏ hàng!`);
+    
+    // Close modal
+    closeModalFunction();
+    
+    // Update cart count (you can implement this based on your cart system)
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+      const currentCount = parseInt(cartCount.textContent) || 0;
+      cartCount.textContent = currentCount + currentQuantity;
+    }
+  });
+});
 </script>
 
 </html>
