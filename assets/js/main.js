@@ -332,11 +332,7 @@ const bannerSwiper = new Swiper('.banner-swiper', {
 const foodMenuSwiper = new Swiper('.food-menu-swiper', {
   slidesPerView: 1,
   spaceBetween: 15,
-  loop: false,
-  navigation: {
-    nextEl: '.food-menu-swiper .swiper-button-next',
-    prevEl: '.food-menu-swiper .swiper-button-prev',
-  },
+  loop: true,
   breakpoints: {
     // Mobile (small screens) - 1 product
     0: {
