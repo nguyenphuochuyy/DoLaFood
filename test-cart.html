@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Cart Functionality</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/tintuc.css">
+    
+    <style>
+        .test-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .cart-dropdown {
+            position: static !important;
+            display: block !important;
+            width: 100% !important;
+            max-width: 400px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>🧪 Test Cart Functionality</h1>
+        
+        <!-- Cart Display -->
+        <div class="test-section">
+            <h3>Giỏ hàng (Cart Count: <span class="cart-count">0</span>)</h3>
+            
+            <div class="cart-dropdown">
+                <!-- Cart Header -->
+                <div class="cart-header">
+                    <div class="delivery-text">
+                        <span>Giao hàng</span>
+                        <p>15-30 phút</p>
+                    </div>
+                </div>
+                
+                <!-- Cart Items Container -->
+                <div class="cart-items">
+                    <p class="empty-cart">Giỏ hàng trống</p>
+                </div>
+                
+                <!-- Cart Total -->
+                <div class="cart-total">
+                    <div class="total-row">
+                        <span>Tổng tiền:</span>
+                        <span class="total-price">0đ</span>
+                    </div>
+                </div>
+                
+                <!-- Cart Actions -->
+                <div class="cart-actions">
+                    <button class="btn-checkout btn btn-success">Thanh toán</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Test Controls -->
+        <div class="test-section">
+            <h3>🎮 Test Controls</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Thêm sản phẩm:</h5>
+                    <button class="btn btn-primary me-2" onclick="addProduct1()">Gà Giòn (99k)</button>
+                    <button class="btn btn-primary me-2" onclick="addProduct2()">Pizza (159k)</button>
+                    <button class="btn btn-primary me-2" onclick="addProduct3()">Burger (79k)</button>
+                </div>
+                <div class="col-md-6">
+                    <h5>Điều khiển giỏ hàng:</h5>
+                    <button class="btn btn-info me-2" onclick="showCartInfo()">Xem thông tin</button>
+                    <button class="btn btn-warning me-2" onclick="clearAllCart()">Xóa tất cả</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Test Results -->
+        <div class="test-section">
+            <h3>📊 Test Results</h3>
+            <div id="testResults" class="alert alert-info">
+                Kết quả test sẽ hiển thị ở đây...
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="test-section">
+            <h3>📝 Test Instructions</h3>
+            <ol>
+                <li><strong>Test thêm sản phẩm:</strong> Click các nút "Thêm sản phẩm" và kiểm tra cart count</li>
+                <li><strong>Test tăng số lượng:</strong> Click nút "+" trong giỏ hàng</li>
+                <li><strong>Test giảm số lượng:</strong> Click nút "-" trong giỏ hàng</li>
+                <li><strong>Test xóa sản phẩm:</strong> 
+                    <ul>
+                        <li>Cách 1: Click nút "-" đến khi quantity = 0</li>
+                        <li>Cách 2: Click nút "Xóa"</li>
+                    </ul>
+                </li>
+                <li><strong>Test tổng tiền:</strong> Kiểm tra tổng tiền có cập nhật đúng không</li>
+                <li><strong>Test localStorage:</strong> Refresh trang và kiểm tra data có còn không</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Test Functions -->
+    <script>
+        function addProduct1() {
+            ShoppingCart.addToCart({
+                id: 'ga_gion_test',
+                name: 'Gà Giòn Xốt Tương Tỏi',
+                price: '99.000đ',
+                unitPrice: 99000,
+                quantity: 1,
+                option: '3 miếng',
+                notes: '',
+                image: 'assets/images/pro1.webp'
+            });
+            updateTestResults('Đã thêm Gà Giòn vào giỏ hàng');
+        }
+        
+        function addProduct2() {
+            ShoppingCart.addToCart({
+                id: 'pizza_test',
+                name: 'Pizza Ý Sốt Bò Bầm',
+                price: '159.000đ',
+                unitPrice: 159000,
+                quantity: 1,
+                option: 'Size L',
+                notes: '',
+                image: 'assets/images/pro2.webp'
+            });
+            updateTestResults('Đã thêm Pizza vào giỏ hàng');
+        }
+        
+        function addProduct3() {
+            ShoppingCart.addToCart({
+                id: 'burger_test',
+                name: 'Burger Bò Phô Mai',
+                price: '79.000đ',
+                unitPrice: 79000,
+                quantity: 1,
+                option: 'Combo set',
+                notes: '',
+                image: 'assets/images/pro3.webp'
+            });
+            updateTestResults('Đã thêm Burger vào giỏ hàng');
+        }
+        
+        function showCartInfo() {
+            const cartInfo = ShoppingCart.getCartInfo();
+            if (cartInfo) {
+                const info = `
+                    Tổng sản phẩm: ${cartInfo.totalItems}
+                    Tổng tiền: ${cartInfo.totalPrice.toLocaleString('vi-VN')}đ
+                    Số loại sản phẩm: ${cartInfo.items.length}
+                `;
+                updateTestResults(info);
+                console.log('Cart Info:', cartInfo);
+            } else {
+                updateTestResults('❌ Không thể lấy thông tin giỏ hàng');
+            }
+        }
+        
+        function clearAllCart() {
+            if (window.cart) {
+                window.cart.clearCart();
+                updateTestResults('🗑️ Đã xóa toàn bộ giỏ hàng');
+            }
+        }
+        
+        function updateTestResults(message) {
+            const results = document.getElementById('testResults');
+            const timestamp = new Date().toLocaleTimeString();
+            results.innerHTML = `[${timestamp}] ${message}`;
+        }
+        
+        // Test tự động khi trang load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                updateTestResults('✅ Cart module đã được khởi tạo thành công');
+            }, 1000);
+        });
+    </script>
+    
+    <!-- Load Cart Module -->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

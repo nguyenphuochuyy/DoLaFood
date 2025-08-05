@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Integration Example - DolaFood</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/tintuc.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="navbar-nav ms-auto">
+                    <!-- User Icon -->
+                    <div class="nav-item">
+                        <div class="icon">
+                            <p><i class="fa-solid fa-user"></i></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart - Sử dụng cart template -->
+                    <li class="li-cart">
+                        <div class="icon ms-2 cart-dropdown-container">
+                            <p><i class="fa-solid fa-cart-shopping"></i></p>
+                            <span class="cart-count">0</span>
+                            
+                            <!-- Cart Dropdown -->
+                            <div class="cart-dropdown">
+                                <!-- Cart Header -->
+                                <div class="cart-header">
+                                    <div class="delivery-text">
+                                        <span>Giao hàng</span>
+                                        <p>15-30 phút</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cart Items Container -->
+                                <div class="cart-items">
+                                    <!-- Cart items sẽ được render động bởi cart.js -->
+                                    <p class="empty-cart">Giỏ hàng trống</p>
+                                </div>
+                                
+                                <!-- Cart Total -->
+                                <div class="cart-total">
+                                    <div class="total-row">
+                                        <span>Tổng tiền:</span>
+                                        <span class="total-price">0đ</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cart Actions -->
+                                <div class="cart-actions">
+                                    <button class="btn-checkout">Thanh toán</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
+        <h1>Cart Integration Demo</h1>
+        <p>Đây là ví dụ về cách tích hợp cart module mới vào các trang.</p>
+        
+        <!-- Sample Products -->
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="assets/images/pro1.webp" class="card-img-top" alt="Gà Giòn Xốt Tương Tỏi">
+                    <div class="card-body">
+                        <h5 class="card-title">Gà Giòn Xốt Tương Tỏi Hàn Quốc</h5>
+                        <p class="card-text">Giá: 99.000đ</p>
+                        <button class="btn btn-primary" onclick="addSampleProduct1()">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="assets/images/pro2.webp" class="card-img-top" alt="Pizza Ý">
+                    <div class="card-body">
+                        <h5 class="card-title">Pizza Ý Sốt Bò Bầm</h5>
+                        <p class="card-text">Giá: 159.000đ</p>
+                        <button class="btn btn-primary" onclick="addSampleProduct2()">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="assets/images/pro3.webp" class="card-img-top" alt="Burger">
+                    <div class="card-body">
+                        <h5 class="card-title">Burger Bò Phô Mai</h5>
+                        <p class="card-text">Giá: 79.000đ</p>
+                        <button class="btn btn-primary" onclick="addSampleProduct3()">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cart Actions Demo -->
+        <div class="mt-5">
+            <h3>Các thao tác với giỏ hàng:</h3>
+            <button class="btn btn-secondary me-2" onclick="getCartInfo()">Xem thông tin giỏ hàng</button>
+            <button class="btn btn-warning me-2" onclick="clearCart()">Xóa toàn bộ giỏ hàng</button>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="mt-5">
+            <h3>Hướng dẫn tích hợp:</h3>
+            <ol>
+                <li><strong>Include Cart CSS và JS:</strong>
+                    <pre><code>&lt;link rel="stylesheet" href="assets/css/tintuc.css"&gt;
+&lt;script src="assets/js/cart.js"&gt;&lt;/script&gt;
+&lt;script src="assets/js/main.js"&gt;&lt;/script&gt;</code></pre>
+                </li>
+                
+                <li><strong>Sử dụng Cart Template:</strong>
+                    <p>Copy HTML từ file <code>cart-template.html</code> và paste vào header của trang.</p>
+                </li>
+                
+                <li><strong>Thêm sản phẩm vào giỏ hàng:</strong>
+                    <pre><code>// Sử dụng API static
+ShoppingCart.addToCart({
+    id: 'product_1',
+    name: 'Tên sản phẩm',
+    price: '99.000đ',
+    unitPrice: 99000,
+    quantity: 1,
+    option: '3 miếng',
+    notes: 'Ghi chú của khách hàng',
+    image: 'assets/images/product.jpg'
+});
+
+// Hoặc sử dụng instance toàn cục
+window.cart.addItem(productData);</code></pre>
+                </li>
+                
+                <li><strong>Lấy thông tin giỏ hàng:</strong>
+                    <pre><code>const cartInfo = ShoppingCart.getCartInfo();
+console.log('Tổng sản phẩm:', cartInfo.totalItems);
+console.log('Tổng tiền:', cartInfo.totalPrice);</code></pre>
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Demo functions để test cart
+        function addSampleProduct1() {
+            ShoppingCart.addToCart({
+                id: 'ga_gion',
+                name: 'Gà Giòn Xốt Tương Tỏi Hàn Quốc',
+                price: '99.000đ',
+                unitPrice: 99000,
+                quantity: 1,
+                option: '3 miếng',
+                notes: '',
+                image: 'assets/images/pro1.webp'
+            });
+        }
+        
+        function addSampleProduct2() {
+            ShoppingCart.addToCart({
+                id: 'pizza_y',
+                name: 'Pizza Ý Sốt Bò Bầm',
+                price: '159.000đ',
+                unitPrice: 159000,
+                quantity: 1,
+                option: 'Size L',
+                notes: '',
+                image: 'assets/images/pro2.webp'
+            });
+        }
+        
+        function addSampleProduct3() {
+            ShoppingCart.addToCart({
+                id: 'burger_bo',
+                name: 'Burger Bò Phô Mai',
+                price: '79.000đ',
+                unitPrice: 79000,
+                quantity: 1,
+                option: 'Combo set',
+                notes: '',
+                image: 'assets/images/pro3.webp'
+            });
+        }
+        
+        function getCartInfo() {
+            const cartInfo = ShoppingCart.getCartInfo();
+            if (cartInfo) {
+                alert(`Giỏ hàng hiện có:\n- ${cartInfo.totalItems} sản phẩm\n- Tổng tiền: ${cartInfo.totalPrice.toLocaleString('vi-VN')}đ`);
+            } else {
+                alert('Không thể lấy thông tin giỏ hàng');
+            }
+        }
+        
+        function clearCart() {
+            if (window.cart) {
+                window.cart.clearCart();
+                alert('Đã xóa toàn bộ giỏ hàng!');
+            }
+        }
+    </script>
+    
+    <!-- Load Cart Module BEFORE main.js -->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

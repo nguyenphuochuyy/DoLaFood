@@ -31,11 +31,11 @@
     <div class="header-center">
       <div class="container">
         <div class="row align-items-center">
-          <!-- Mobile Menu Toggle -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div class="menu-bar d-lg-none">
+            <button id="openMenu" class="menu-icon">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
           <div class="col-lg-2 col-xl-2 col-12 image-effect">
             <a href="">
               <img src="assets/images/logo.webp" alt="Dola Food Logo">
@@ -49,10 +49,9 @@
             </form>
           </div>
           <div class="col-lg-7 col-xl-6">
-
             <ul class="d-flex align-items-center justify-content-end list-unstyled">
-              <li>
-                <div class="d-flex align-items-center">
+              <li >
+                <div class=" align-items-center d-none d-lg-inline-flex">
                   <img src="assets/images/delivery.webp" width="50" height="50" alt="User Icon">
                   <div class="ms-2 delivery-info">
                     <span>Giao hàng miễn phí</span>
@@ -61,21 +60,66 @@
                 </div>
               </li>
               <li>
-                <div class="d-flex align-items-center icon ms-2">
+                <div class=" align-items-center icon ms-2 d-none d-lg-inline-flex user-dropdown">
                   <p><i class="fa-solid fa-user"></i></p>
+                  <div class="dropdown-menu user-menu">
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-user-plus"></i>
+                      Đăng ký
+                    </a>
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-sign-in-alt"></i>
+                      Đăng nhập
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-heart"></i>
+                      Danh sách yêu thích
+                    </a>
+                  </div>
+                </div>
               </li>
-              <li>
-                <div class="d-flex align-items-center icon ms-2">
+              <li class="li-cart">
+                <div class="icon ms-2 cart-dropdown-container">
                   <p><i class="fa-solid fa-cart-shopping"></i></p>
                   <span class="cart-count">0</span>
+                  
+                  <!-- Cart Dropdown -->
+                  <div class="cart-dropdown">
+                    <!-- Cart Header -->
+                    <div class="cart-header">
+                      <div class="delivery-text">
+                        <span>Giao hàng</span>
+                        <p>15-30 phút</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Cart Items Container -->
+                    <div class="cart-items">
+                      <!-- Cart items sẽ được render động bởi cart.js -->
+                      <p class="empty-cart">Giỏ hàng trống</p>
+                    </div>
+                    
+                    <!-- Cart Total -->
+                    <div class="cart-total">
+                      <div class="total-row">
+                        <span>Tổng tiền:</span>
+                        <span class="total-price">0đ</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Cart Actions -->
+                    <div class="cart-actions">
+                      <button class="btn-checkout">Thanh toán</button>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li>
-
-                <a href="#" class=" custom-btn">Đặt món online</a>
-
+              <li >
+                <a href="tatcasanpham.html" class=" custom-btn d-none d-lg-inline-flex">Đặt món online</a>
               </li>
-              <li>
-                <a href="#" class=" custom-btn">Đặt bàn</a>
+              <li >
+                <a href="#" class=" custom-btn d-none d-lg-inline-flex">Đặt bàn</a>
               </li>
             </ul>
           </div>
@@ -923,182 +967,6 @@
           </div>
         </div>
       </section>
-      <section class="product-section">
-        <div>
-          <h3 class="title-module">Khai vị</h3>
-        </div>
-        <div class="row row-fix">
-          <!-- Sản phẩm 1 -->
-          <div class="col-xl-20 col-lg-3 col-md-4 col-6 col-fix">
-            <form action="" class="product-action">
-              <div class="product-thumbnail">
-                <a href="" class="img-thumb">
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303"
-                    width="234" height="234" alt="">
-                </a>
-              </div>
-              <div class="product-info">
-                <h3 class="product-name">
-                  <a href="" class="line-clamp line-clamp-1">
-                    Pizza Puff_Gà BBQ Nướng Dứa
-                  </a>
-                </h3>
-                <div class="product-content">
-                  <span class="line-clamp line-clamp-2">
-                    Gà nướng dứa cùng phô mai thơm béo và sốt Thousand Island.
-                  </span>
-                  <a href="#" class="see-more-content">Xem thêm</a>
-                </div>
-                <div class="group-form">
-                  <div class="price-box">
-                    <span>Giá chỉ từ</span>
-                    89.000đ
-                  </div>
-                  <a href="" title="Thêm" class="btn-views">
-                    Thêm
-                  </a>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-xl-20 col-lg-3 col-md-4 col-6 col-fix">
-            <form action="" class="product-action">
-              <div class="product-thumbnail">
-                <a href="" class="img-thumb">
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303"
-                    width="234" height="234" alt="">
-                </a>
-              </div>
-              <div class="product-info">
-                <h3 class="product-name">
-                  <a href="" class="line-clamp line-clamp-1">
-                    Pizza Puff_Gà BBQ Nướng Dứa
-                  </a>
-                </h3>
-                <div class="product-content">
-                  <span class="line-clamp line-clamp-2">
-                    Gà nướng dứa cùng phô mai thơm béo và sốt Thousand Island.
-                  </span>
-                  <a href="#" class="see-more-content">Xem thêm</a>
-                </div>
-                <div class="group-form">
-                  <div class="price-box">
-                    <span>Giá chỉ từ</span>
-                    89.000đ
-                  </div>
-                  <a href="" title="Thêm" class="btn-views">
-                    Thêm
-                  </a>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-xl-20 col-lg-3 col-md-4 col-6 col-fix">
-            <form action="" class="product-action">
-              <div class="product-thumbnail">
-                <a href="" class="img-thumb">
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303"
-                    width="234" height="234" alt="">
-                </a>
-              </div>
-              <div class="product-info">
-                <h3 class="product-name">
-                  <a href="" class="line-clamp line-clamp-1">
-                    Pizza Puff_Gà BBQ Nướng Dứa
-                  </a>
-                </h3>
-                <div class="product-content">
-                  <span class="line-clamp line-clamp-2">
-                    Gà nướng dứa cùng phô mai thơm béo và sốt Thousand Island.
-                  </span>
-                  <a href="#" class="see-more-content">Xem thêm</a>
-                </div>
-                <div class="group-form">
-                  <div class="price-box">
-                    <span>Giá chỉ từ</span>
-                    89.000đ
-                  </div>
-                  <a href="" title="Thêm" class="btn-views">
-                    Thêm
-                  </a>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-xl-20 col-lg-3 col-md-4 col-6 col-fix">
-            <form action="" class="product-action">
-              <div class="product-thumbnail">
-                <a href="" class="img-thumb">
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303"
-                    width="234" height="234" alt="">
-                </a>
-              </div>
-              <div class="product-info">
-                <h3 class="product-name">
-                  <a href="" class="line-clamp line-clamp-1">
-                    Pizza Puff_Gà BBQ Nướng Dứa
-                  </a>
-                </h3>
-                <div class="product-content">
-                  <span class="line-clamp line-clamp-2">
-                    Gà nướng dứa cùng phô mai thơm béo và sốt Thousand Island.
-                  </span>
-                  <a href="#" class="see-more-content">Xem thêm</a>
-                </div>
-                <div class="group-form">
-                  <div class="price-box">
-                    <span>Giá chỉ từ</span>
-                    89.000đ
-                  </div>
-                  <a href="" title="Thêm" class="btn-views">
-                    Thêm
-                  </a>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-xl-20 col-lg-3 col-md-4 col-6 col-fix">
-            <form action="" class="product-action">
-              <div class="product-thumbnail">
-                <a href="" class="img-thumb">
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303"
-                    width="234" height="234" alt="">
-                </a>
-              </div>
-              <div class="product-info">
-                <h3 class="product-name">
-                  <a href="" class="line-clamp line-clamp-1">
-                    Pizza Puff_Gà BBQ Nướng Dứa
-                  </a>
-                </h3>
-                <div class="product-content">
-                  <span class="line-clamp line-clamp-2">
-                    Gà nướng dứa cùng phô mai thơm béo và sốt Thousand Island.
-                  </span>
-                  <a href="#" class="see-more-content">Xem thêm</a>
-                </div>
-                <div class="group-form">
-                  <div class="price-box">
-                    <span>Giá chỉ từ</span>
-                    89.000đ
-                  </div>
-                  <a href="" title="Thêm" class="btn-views">
-                    Thêm
-                  </a>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-12 more-btn mt-2 text-center">
-            <a href="" class="btn-views">Xem thêm</a>
-          </div>
-        </div>
-      </section>
     </div>
 
     <footer class="footer bg-green text-white pt-5 pb-3">
@@ -1234,8 +1102,44 @@
       </div>
     </footer>
   </main>
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-menu-header">
+      <img src="assets/images/logo.webp" alt="Dola Food" class="mobile-logo">
+      <button id="closeMenu" class="close-icon"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mobile-menu-title">MENU CHÍNH</div>
+    <ul class="mobile-menu-list">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="gioithieu.html">Giới thiệu</a></li>
+      <li class="has-submenu">
+        <a href="tatcasanpham.html" class="submenu-toggle">
+          Sản phẩm 
+          <span class="submenu-icon">+</span>
+        </a>
+        <ul class="submenu">
+          <li><a href="chitietsanpham.html">Pizza</a></li>
+          <li><a href="chitietsanpham.html">Khai vị</a></li>
+          <li><a href="chitietsanpham.html">Mỳ Ý</a></li>
+          <li><a href="chitietsanpham.html">Salad</a></li>
+          <li><a href="chitietsanpham.html">Thức uống</a></li>
+        </ul>
+      </li>
+      <li><a href="tintuc.html">Tin tức</a></li>
+      <li><a href="lienhe.html">Liên hệ</a></li>
+      <li><a href="faq.html">Câu hỏi thường gặp</a></li>
+      <li><a href="hethongcuahang.html">Hệ thống cửa hàng</a></li>
+      <li><a href="datlich.html">Đặt bàn</a></li>
+    </ul>
+  </div>
+  <div id="menuOverlay" class="menu-overlay"></div>
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Load Cart Module BEFORE main.js -->
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/tatcasanpham.js"></script>
 </body>
-<script src="/assets/js/tatcasanpham.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 </html>

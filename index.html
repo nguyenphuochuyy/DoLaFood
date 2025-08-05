@@ -13,8 +13,6 @@
     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-
   <!-- Vendor -->
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
@@ -34,10 +32,10 @@
     <div class="header-center">
       <div class="container">
         <div class="row align-items-center">
-          <div class="menu-bar d-lg-none d-flex">
-            <div class="icon-cus">
+          <div class="menu-bar d-lg-none">
+            <button id="openMenu" class="menu-icon">
               <i class="fas fa-bars"></i>
-            </div>
+            </button>
           </div>
           <div class="col-lg-2 col-xl-2 col-12 image-effect">
             <a href="">
@@ -84,45 +82,31 @@
               </li>
               <li class="li-cart">
                 <div class="icon ms-2 cart-dropdown-container">
-                  <p><i class="fa-solid fa-cart-shopping"></i></p>
-                  <span class="cart-count">1</span>
+                  <a href="giohang.html" class="cart-link">
+                    <p><i class="fa-solid fa-cart-shopping"></i></p>
+                    <span class="cart-count">0</span>
+                  </a>
                   
                   <!-- Cart Dropdown -->
                   <div class="cart-dropdown">
-                  
                     
+                    <!-- Cart Items Container -->
                     <div class="cart-items">
-                      <!-- Cart Item -->
-                      <div class="cart-item">
-                        <img src="assets/images/pro1.webp" alt="Gà Giòn Xốt Tương Tỏi Hàn Quốc" class="cart-item-image">
-                        <div class="cart-item-details">
-                          <h6 class="cart-item-name">Gà Giòn Xốt Tương Tỏi Hàn Quốc</h6>
-                          <div class="cart-item-options">
-                            <span class="cart-item-size">3 miếng</span>
-                            <span class="cart-item-note">Xóa</span>
-                          </div>
-                          <div class="cart-item-quantity">
-                            <span>Số lượng</span>
-                            <div class="quantity-controls">
-                              <button class="quantity-btn minus">-</button>
-                              <span class="quantity-value">1</span>
-                              <button class="quantity-btn plus">+</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-item-price">99.000đ</div>
-                      </div>
+                      <!-- Cart items sẽ được render động bởi cart.js -->
+                      <p class="empty-cart">Giỏ hàng trống</p>
                     </div>
                     
+                    <!-- Cart Total -->
                     <div class="cart-total">
                       <div class="total-row">
                         <span>Tổng tiền:</span>
-                        <span class="total-price">99.000đ</span>
+                        <span class="total-price">0đ</span>
                       </div>
                     </div>
                     
+                    <!-- Cart Actions -->
                     <div class="cart-actions">
-                      <button class="btn-checkout">Thanh toán</button>
+                      <a href="giohang.html" class="btn-checkout">Xem giỏ hàng</a>
                     </div>
                   </div>
                 </div>
@@ -2320,12 +2304,45 @@
       </div>
     </div>
   </div>
-
+  
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-menu-header">
+      <img src="assets/images/logo.webp" alt="Dola Food" class="mobile-logo">
+      <button id="closeMenu" class="close-icon"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mobile-menu-title">MENU CHÍNH</div>
+    <ul class="mobile-menu-list">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="gioithieu.html">Giới thiệu</a></li>
+      <li class="has-submenu">
+        <a href="tatcasanpham.html" class="submenu-toggle">
+          Sản phẩm 
+          <span class="submenu-icon">+</span>
+        </a>
+        <ul class="submenu">
+          <li><a href="chitietsanpham.html">Pizza</a></li>
+          <li><a href="chitietsanpham.html">Khai vị</a></li>
+          <li><a href="chitietsanpham.html">Mỳ Ý</a></li>
+          <li><a href="chitietsanpham.html">Salad</a></li>
+          <li><a href="chitietsanpham.html">Thức uống</a></li>
+        </ul>
+      </li>
+      <li><a href="tintuc.html">Tin tức</a></li>
+      <li><a href="lienhe.html">Liên hệ</a></li>
+      <li><a href="faq.html">Câu hỏi thường gặp</a></li>
+      <li><a href="hethongcuahang.html">Hệ thống cửa hàng</a></li>
+      <li><a href="datlich.html">Đặt bàn</a></li>
+    </ul>
+  </div>
+  <div id="menuOverlay" class="menu-overlay"></div>
 </body>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Load Cart Module BEFORE main.js -->
+<script src="assets/js/cart.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
 // Product Modal Functionality
@@ -2452,32 +2469,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const productPrice = document.getElementById('modalProductPrice').textContent;
     const notes = notesInput.value.trim();
     
-    // Create cart item object
+    // Create cart item object for new cart system
     const cartItem = {
+      id: 'product_' + Date.now(), // Generate unique ID
       name: productName,
       price: productPrice,
+      unitPrice: parseInt(productPrice.replace(/[^\d]/g, '')) || 0, // Parse unit price
       quantity: currentQuantity,
       option: selectedOption,
       notes: notes,
       image: document.getElementById('modalProductImage').src
     };
     
-    // Here you would typically add the item to cart
-    // For now, we'll just show an alert and close the modal
-    console.log('Added to cart:', cartItem);
-    
-    // Show success message
-    alert(`Đã thêm ${currentQuantity} ${productName} vào giỏ hàng!`);
+    // Add to cart using new cart module
+    ShoppingCart.addToCart(cartItem);
     
     // Close modal
     closeModalFunction();
-    
-    // Update cart count (you can implement this based on your cart system)
-    const cartCount = document.querySelector('.cart-count');
-    if (cartCount) {
-      const currentCount = parseInt(cartCount.textContent) || 0;
-      cartCount.textContent = currentCount + currentQuantity;
-    }
   });
 });
 </script>

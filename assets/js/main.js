@@ -353,216 +353,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Search functionality
-  const searchForm = document.querySelector('.search-form');
-  const searchInput = document.querySelector('.search-input');
-
-  if (searchForm && searchInput) {
-    searchForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const query = searchInput.value.trim();
-      if (query) {
-        // Thêm logic search ở đây
-        console.log('Searching for:', query);
-        // Có thể redirect hoặc hiển thị kết quả
-      }
-    });
-  }
-
-  // Cart functionality
-  const cartIcon = document.querySelector('.fa-cart-shopping');
-  const cartCount = document.querySelector('.cart-count');
-
-  if (cartIcon && cartCount) {
-    cartIcon.addEventListener('click', function () {
-      // Thêm logic cart ở đây
-      console.log('Cart clicked');
-      // Có thể mở modal cart hoặc redirect
-    });
-  }
-
-  // Function to attach cart dropdown events
-  function attachCartEvents() {
-    // Cart dropdown quantity controls
-    const quantityButtons = document.querySelectorAll('.quantity-btn');
-    console.log('Found quantity buttons:', quantityButtons.length);
-
-    quantityButtons.forEach((button, index) => {
-      console.log(`Attaching event to button ${index}:`, button);
-      // Remove existing event listeners to prevent duplication
-      button.removeEventListener('click', handleQuantityClick);
-      button.addEventListener('click', handleQuantityClick);
-    });
-
-    // Delete cart item functionality
-    const deleteButtons = document.querySelectorAll('.cart-item-note');
-    console.log('Found delete buttons:', deleteButtons.length);
-
-    deleteButtons.forEach((button, index) => {
-      console.log(`Attaching event to delete button ${index}:`, button);
-      // Remove existing event listeners to prevent duplication
-      button.removeEventListener('click', handleDeleteClick);
-      button.addEventListener('click', handleDeleteClick);
-    });
-  }
-
-  // Handle quantity button clicks
-  function handleQuantityClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const button = e.target;
-    const isPlus = button.classList.contains('plus');
-    const quantityValue = button.parentElement.querySelector('.quantity-value');
-    const cartItemPrice = button.closest('.cart-item').querySelector('.cart-item-price');
-
-    let currentQuantity = parseInt(quantityValue.textContent);
-    const unitPrice = 99000; // Giá đơn vị (có thể lấy từ data attribute)
-
-    if (isPlus) {
-      currentQuantity++;
-    } else {
-      if (currentQuantity > 1) {
-        currentQuantity--;
-      }
-    }
-
-    quantityValue.textContent = currentQuantity;
-
-    // Cập nhật giá
-    const newPrice = (unitPrice * currentQuantity).toLocaleString('vi-VN');
-    cartItemPrice.textContent = newPrice + 'đ';
-
-    // Cập nhật tổng tiền
-    updateCartTotal();
-
-    console.log('Quantity updated:', currentQuantity);
-  }
-
-  // Handle delete button clicks
-  function handleDeleteClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const button = e.target;
-    const cartItem = button.closest('.cart-item');
-    cartItem.remove();
-
-    // Cập nhật số lượng sản phẩm trong giỏ hàng
-    updateCartCount();
-    updateCartTotal();
-
-    console.log('Item deleted');
-  }
-
-  // Update cart total
-  function updateCartTotal() {
-    const cartItems = document.querySelectorAll('.cart-item');
-    let total = 0;
-
-    cartItems.forEach(item => {
-      const priceText = item.querySelector('.cart-item-price').textContent;
-      const price = parseInt(priceText.replace(/[^\d]/g, ''));
-      total += price;
-    });
-
-    const totalElement = document.querySelector('.total-price');
-    if (totalElement) {
-      totalElement.textContent = total.toLocaleString('vi-VN') + 'đ';
-    }
-  }
-
-  // Update cart count
-  function updateCartCount() {
-    const cartItems = document.querySelectorAll('.cart-item');
-    const cartCountElement = document.querySelector('.cart-count');
-
-    if (cartCountElement) {
-      cartCountElement.textContent = cartItems.length;
-    }
-  }
-
-  // Initialize cart events
-  attachCartEvents();
-
-  // Event delegation for cart dropdown (backup method)
-  document.addEventListener('click', function (e) {
-    // Handle quantity buttons
-    if (e.target.classList.contains('quantity-btn')) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      console.log('Quantity button clicked via delegation:', e.target);
-
-      const button = e.target;
-      const isPlus = button.classList.contains('plus');
-      const quantityValue = button.parentElement.querySelector('.quantity-value');
-      const cartItemPrice = button.closest('.cart-item').querySelector('.cart-item-price');
-
-      if (!quantityValue || !cartItemPrice) {
-        console.error('Could not find required elements');
-        return;
-      }
-
-      let currentQuantity = parseInt(quantityValue.textContent);
-      const unitPrice = 99000;
-
-      if (isPlus) {
-        currentQuantity++;
-      } else {
-        if (currentQuantity > 1) {
-          currentQuantity--;
-        }
-      }
-
-      quantityValue.textContent = currentQuantity;
-
-      // Cập nhật giá
-      const newPrice = (unitPrice * currentQuantity).toLocaleString('vi-VN');
-      cartItemPrice.textContent = newPrice + 'đ';
-
-      // Cập nhật tổng tiền
-      updateCartTotal();
-
-      console.log('Quantity updated via delegation:', currentQuantity);
-    }
-
-    // Handle delete buttons
-    if (e.target.classList.contains('cart-item-note')) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      console.log('Delete button clicked via delegation:', e.target);
-
-      const cartItem = e.target.closest('.cart-item');
-      if (cartItem) {
-        cartItem.remove();
-        updateCartCount();
-        updateCartTotal();
-        console.log('Item deleted via delegation');
-      }
-    }
-  });
-
-  // Re-attach events when cart content changes (for dynamic content)
-  const cartDropdown = document.querySelector('.cart-dropdown');
-  if (cartDropdown) {
-    // Use MutationObserver to watch for changes in cart content
-    const observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        if (mutation.type === 'childList') {
-          // Re-attach events when cart items are added/removed
-          setTimeout(attachCartEvents, 100);
-        }
-      });
-    });
-
-    observer.observe(cartDropdown, {
-      childList: true,
-      subtree: true
-    });
-  }
-
   // User icon functionality
   const userIcon = document.querySelector('.fa-user');
 
@@ -713,6 +503,8 @@ setInterval(() => {
   const product = getProductPurchased1MinuteAgo();
   if (product) showProductPopup(product);
 }, 20000);
+
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function () {
   const openBtn = document.getElementById('openMenu');
@@ -724,16 +516,45 @@ document.addEventListener('DOMContentLoaded', function () {
     openBtn.addEventListener('click', function () {
       menu.classList.add('active');
       overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
     });
+    
     closeBtn.addEventListener('click', function () {
       menu.classList.remove('active');
       overlay.classList.remove('active');
+      document.body.style.overflow = '';
     });
+    
     overlay.addEventListener('click', function () {
       menu.classList.remove('active');
       overlay.classList.remove('active');
+      document.body.style.overflow = '';
     });
   }
+
+  // Submenu toggle functionality
+  const submenuToggles = document.querySelectorAll('.submenu-toggle');
+  submenuToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parentLi = this.closest('.has-submenu');
+      const isActive = parentLi.classList.contains('active');
+      
+      // Close all other submenus
+      document.querySelectorAll('.has-submenu').forEach(item => {
+        if (item !== parentLi) {
+          item.classList.remove('active');
+        }
+      });
+      
+      // Toggle current submenu
+      if (isActive) {
+        parentLi.classList.remove('active');
+      } else {
+        parentLi.classList.add('active');
+      }
+    });
+  });
 });
 
 // User Dropdown Menu

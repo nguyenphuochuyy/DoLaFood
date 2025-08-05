@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tin Tức</title>
+  <title>Giỏ Hàng</title>
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,11 +14,10 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <!-- Vendor -->
-
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" />
-  <link rel="stylesheet" href="assets/css/tintuc.css">
+  <link rel="stylesheet" href="assets/css/giohang.css">
   <link rel="stylesheet" href="assets/css/reset.css">
 </head>
 
@@ -80,21 +79,11 @@
               </li>
               <li class="li-cart">
                 <div class="icon ms-2 cart-dropdown-container">
-                  <a href="giohang.html" class="cart-link">
-                    <p><i class="fa-solid fa-cart-shopping"></i></p>
-                    <span class="cart-count">0</span>
-                  </a>
+                  <p><i class="fa-solid fa-cart-shopping"></i></p>
+                  <span class="cart-count">0</span>
                   
                   <!-- Cart Dropdown -->
                   <div class="cart-dropdown">
-                    <!-- Cart Header -->
-                    <div class="cart-header">
-                      <div class="delivery-text">
-                        <span>Giao hàng</span>
-                        <p>15-30 phút</p>
-                      </div>
-                    </div>
-                    
                     <!-- Cart Items Container -->
                     <div class="cart-items">
                       <!-- Cart items sẽ được render động bởi cart.js -->
@@ -111,7 +100,7 @@
                     
                     <!-- Cart Actions -->
                     <div class="cart-actions">
-                      <a href="giohang.html" class="btn-checkout">Xem giỏ hàng</a>
+                      <button class="btn-checkout">Thanh toán</button>
                     </div>
                   </div>
                 </div>
@@ -136,7 +125,7 @@
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav ml-auto">
-                    <li class="nav-item " data-page="index.html">
+                    <li class="nav-item" data-page="index.html">
                       <a class="nav-link" href="index.html">
                         Trang chủ
                       </a>
@@ -159,7 +148,7 @@
                         <a class="dropdown-item" href="chitietsanpham.html">Thức uống</a>
                       </div>
                     </li>
-                    <li class="nav-item active-btn" data-page="tintuc.html">
+                    <li class="nav-item" data-page="tintuc.html">
                       <a class="nav-link" href="tintuc.html">
                         Tin tức
                       </a>
@@ -192,251 +181,19 @@
         </div>
       </div>
     </div>
-  
-  </header>
     <div class="breadcrumb-custom">
       <div class="container">
-        <a href="index.html">Trang chủ</a> <span>&gt;</span> <span class="active">Tin tức</span>
+        <a href="index.html">Trang chủ</a> <span>&gt;</span> <span class="active">Giỏ hàng</span>
       </div>
     </div>
+  </header>
+
+  </div>
+  
   <main>
-    <div class="news">
-      <div class="container">
-        <div class="row">
-          <div class="right-content col-lg-8 col-xl-8 col-12">
-            <div class="list-blogs">
-              <div class="row row-fix">
-                <div class="col-12 col-md-6 col-lg-6 col-fix">
-                  <div class="item-blog">
-                    <div class="blog-thumb">
-                      <a href="thumb">
-                        <img width="940" height="640" class="lazyload loaded"
-                          src="https://bizweb.dktcdn.net/100/510/571/articles/de-banh-pizza-mua-o-dau-0.jpg?v=1709024507643"
-                          data-src="https://bizweb.dktcdn.net/100/510/571/articles/de-banh-pizza-mua-o-dau-0.jpg?v=1709024507643"
-                          alt="Đế bánh pizza mua ở đâu đảm bảo chất lượng?" data-was-processed="true">
-                      </a>
-                    </div>
-                    <div class="blog-content">
-                      <h3>
-                        <a href="" class="line-clamp line-clamp-2">Đế bánh pizza mua ở đâu đảm bảo chất lượng?</a>
-                      </h3>
-                      <div class="time-post">
-                        27/02/2024
-                      </div>
-                      <p class="justify line-clamp line-clamp-3">
-                        Nếu bạn muốn tự làm bánh pizza tại nhà thì có thể chọn mua đế bánh pizza để tiết kiệm thời gian
-                        hơn. Tuy nhiên, khi mua đế bánh, bạn cũng nên...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-6 col-fix">
-                  <div class="item-blog">
-                    <div class="blog-thumb">
-                      <a class="thumb" href="/cach-lam-pizza-xot-mayonnaise-thom-beo-ngon-ngat-ngay"
-                        title="Cách làm pizza xốt Mayonnaise thơm béo ngon ngất ngây">
-                        <img width="940" height="640" class="lazyload loaded"
-                          src="https://bizweb.dktcdn.net/100/510/571/articles/cach-lam-pizza-xot-mayonnaise-4.jpg?v=1709024419360"
-                          data-src="https://bizweb.dktcdn.net/100/510/571/articles/cach-lam-pizza-xot-mayonnaise-4.jpg?v=1709024419360"
-                          alt="Cách làm pizza xốt Mayonnaise thơm béo ngon ngất ngây" data-was-processed="true">
-                      </a>
-                    </div>
-                    <div class="blog-content">
-                      <h3>
-                        <a class="line-clamp line-clamp-2" href="/cach-lam-pizza-xot-mayonnaise-thom-beo-ngon-ngat-ngay"
-                          title="Cách làm pizza xốt Mayonnaise thơm béo ngon ngất ngây">Cách làm pizza xốt Mayonnaise
-                          thơm béo ngon ngất ngây</a>
-                      </h3>
-                      <div class="time-post">
-                        27/02/2024
-                      </div>
-                      <p class="justify line-clamp line-clamp-3">
-                        Các món pizza xốt Mayonnaise luôn góp mặt vào menu “vàng” của chuỗi cửa hàng Dola trên toàn
-                        quốc. Hôm nay, hãy cùng khám phá xem điều gì đã tạo nên...
-
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-6 col-fix">
-                  <div class="item-blog">
-                    <div class="blog-thumb">
-                      <a class="thumb" href="/pasta-la-mon-an-cua-nuoc-nao-pasta-va-spaghetti-co-gi-khac-nhau"
-                        title="Pasta là món ăn của nước nào? Pasta và Spaghetti có gì khác nhau?">
-                        <img width="940" height="640" class="lazyload loaded"
-                          src="https://bizweb.dktcdn.net/100/510/571/articles/tim-hieu-cac-loai-pasta-0.jpg?v=1709024193760"
-                          data-src="https://bizweb.dktcdn.net/100/510/571/articles/tim-hieu-cac-loai-pasta-0.jpg?v=1709024193760"
-                          alt="Pasta là món ăn của nước nào? Pasta và Spaghetti có gì khác nhau?"
-                          data-was-processed="true">
-                      </a>
-                    </div>
-                    <div class="blog-content">
-                      <h3>
-                        <a class="line-clamp line-clamp-2"
-                          href="/pasta-la-mon-an-cua-nuoc-nao-pasta-va-spaghetti-co-gi-khac-nhau"
-                          title="Pasta là món ăn của nước nào? Pasta và Spaghetti có gì khác nhau?">Pasta là món ăn của
-                          nước nào? Pasta và Spaghetti có gì khác nhau?</a>
-                      </h3>
-                      <div class="time-post">
-                        27/02/2024
-                      </div>
-                      <p class="justify line-clamp line-clamp-3">
-                        Bất kỳ ai đã từng thưởng thức một trong các loại Pasta, chắc hẳn sẽ không thể nào quên được cảm
-                        giác Pasta dai mềm đẫm xốt khi nhai trong...
-
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-6 col-fix">
-                  <div class="item-blog">
-                    <div class="blog-thumb">
-                      <a class="thumb" href="/tiet-lo-tinh-cach-qua-cach-an-pizza-cuc-thu-vi"
-                        title="Tiết lộ tính cách qua cách ăn pizza cực thú vị">
-                        <img width="940" height="640" class="lazyload loaded"
-                          src="https://bizweb.dktcdn.net/100/510/571/articles/tiet-lo-tinh-cach-qua-cach-an-pizza-0.jpg?v=1709024054670"
-                          data-src="https://bizweb.dktcdn.net/100/510/571/articles/tiet-lo-tinh-cach-qua-cach-an-pizza-0.jpg?v=1709024054670"
-                          alt="Tiết lộ tính cách qua cách ăn pizza cực thú vị" data-was-processed="true">
-                      </a>
-                    </div>
-                    <div class="blog-content">
-                      <h3>
-                        <a class="line-clamp line-clamp-2" href="/tiet-lo-tinh-cach-qua-cach-an-pizza-cuc-thu-vi"
-                          title="Tiết lộ tính cách qua cách ăn pizza cực thú vị">Tiết lộ tính cách qua cách ăn pizza cực
-                          thú vị</a>
-                      </h3>
-                      <div class="time-post">
-                        27/02/2024
-                      </div>
-                      <p class="justify line-clamp line-clamp-3">
-                        1. Ăn vỏ bánh trước tiên: Nhóm người tạo ảnh hưởng, thích sự khác biệt
-                        Đây là kiểu người thường bắt đầu ăn pizza bằng cách cắn phần vỏ bánh trước,...
-
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="left-content col-lg-4 col-xl-4">
-            <div class="aside-content-menu aside-content-blog">
-              <div class="title-head-col">
-                Danh mục tin tức
-              </div>
-              <nav class="nav-category">
-                <ul class="nav navbar-pills">
-                  <li class="nav-item relative">
-                    <a title="Trang chủ" class="nav-link" href="index.html">Trang chủ</a>
-                  </li>
-                  <li class="nav-item relative">
-                    <a title="Giới thiệu" class="nav-link" href="gioithieu.html">Giới thiệu</a>
-                  </li>
-                  <li class="nav-item relative dropdown-item">
-                    <a title="Sản phẩm" class="nav-link dropdown-toggle" href="tatcasanpham.html">Sản phẩm</a>
-
-                  </li>
-                  <li class="nav-item relative">
-                    <a title="Tin tức" class="nav-link" href="tintuc.html">Tin tức</a>
-                  </li>
-                  <li class="nav-item relative">
-                    <a title="Liên hệ" class="nav-link" href="/">Liên hệ</a>
-                  </li>
-                  <li class="nav-item relative">
-                    <a title="Câu hỏi thường gặp" class="nav-link" href="/">Câu hỏi thường gặp</a>
-                  </li>
-                  <li class="nav-item relative">
-                    <a title="Hệ thống cửa hàng" class="nav-link" href="/">Hệ thống cửa hàng</a>
-                  </li>
-                  <li class="nav-item relative">
-                    <a title="Đặt bàn" class="nav-link" href="/">Đặt bàn</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="blog_noibat">
-              <h2 class="h2_sidebar_blog">
-                Bài viết nổi bật
-              </h2>
-              <div class="item-blog-small">
-                <div class="blog-thumb">
-                  <a class="thumb" href="/de-banh-pizza-mua-o-dau-dam-bao-chat-luong"
-                    title="Đế bánh pizza mua ở đâu đảm bảo chất lượng?">
-                    <img class="lazyload loaded"
-                      src="https://bizweb.dktcdn.net/100/510/571/articles/de-banh-pizza-mua-o-dau-0.jpg?v=1709024507643"
-                      data-src="https://bizweb.dktcdn.net/100/510/571/articles/de-banh-pizza-mua-o-dau-0.jpg?v=1709024507643"
-                      alt="Đế bánh pizza mua ở đâu đảm bảo chất lượng?" data-was-processed="true">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <h3>
-                    <a class="line-clamp line-clamp-2" href="/de-banh-pizza-mua-o-dau-dam-bao-chat-luong"
-                      title="Đế bánh pizza mua ở đâu đảm bảo chất lượng?">Đế bánh pizza mua ở đâu đảm bảo chất
-                      lượng?</a>
-                  </h3>
-                </div>
-              </div>
-              <div class="item-blog-small">
-                <div class="blog-thumb">
-                  <a class="thumb" href="/cach-lam-pizza-xot-mayonnaise-thom-beo-ngon-ngat-ngay"
-                    title="Cách làm pizza xốt Mayonnaise thơm béo ngon ngất ngây">
-                    <img class="lazyload loaded"
-                      src="https://bizweb.dktcdn.net/100/510/571/articles/cach-lam-pizza-xot-mayonnaise-4.jpg?v=1709024419360"
-                      data-src="https://bizweb.dktcdn.net/100/510/571/articles/cach-lam-pizza-xot-mayonnaise-4.jpg?v=1709024419360"
-                      alt="Cách làm pizza xốt Mayonnaise thơm béo ngon ngất ngây" data-was-processed="true">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <h3>
-                    <a class="line-clamp line-clamp-2" href="/de-banh-pizza-mua-o-dau-dam-bao-chat-luong"
-                      title="Đế bánh pizza mua ở đâu đảm bảo chất lượng?">Cách làm pizza xốt Mayonnaise thơm béo ngon
-                      ngất ngây</a>
-                  </h3>
-                </div>
-              </div>
-              <div class="item-blog-small">
-                <div class="blog-thumb">
-                  <a class="thumb" href="/pasta-la-mon-an-cua-nuoc-nao-pasta-va-spaghetti-co-gi-khac-nhau"
-                    title="Pasta là món ăn của nước nào? Pasta và Spaghetti có gì khác nhau?">
-                    <img class="lazyload loaded"
-                      src="https://bizweb.dktcdn.net/100/510/571/articles/tim-hieu-cac-loai-pasta-0.jpg?v=1709024193760"
-                      data-src="https://bizweb.dktcdn.net/100/510/571/articles/tim-hieu-cac-loai-pasta-0.jpg?v=1709024193760"
-                      alt="Pasta là món ăn của nước nào? Pasta và Spaghetti có gì khác nhau?" data-was-processed="true">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <h3>
-                    <a class="line-clamp line-clamp-2"
-                      href="/pasta-la-mon-an-cua-nuoc-nao-pasta-va-spaghetti-co-gi-khac-nhau"
-                      title="Pasta là món ăn của nước nào? Pasta và Spaghetti có gì khác nhau?">Pasta là món ăn của nước
-                      nào? Pasta và Spaghetti có gì khác nhau?</a>
-                  </h3>
-                </div>
-              </div>
-              <div class="item-blog-small">
-                <div class="blog-thumb">
-                  <a class="thumb" href="/tiet-lo-tinh-cach-qua-cach-an-pizza-cuc-thu-vi"
-                    title="Tiết lộ tính cách qua cách ăn pizza cực thú vị">
-                    <img class="lazyload loaded"
-                      src="https://bizweb.dktcdn.net/100/510/571/articles/tiet-lo-tinh-cach-qua-cach-an-pizza-0.jpg?v=1709024054670"
-                      data-src="https://bizweb.dktcdn.net/100/510/571/articles/tiet-lo-tinh-cach-qua-cach-an-pizza-0.jpg?v=1709024054670"
-                      alt="Tiết lộ tính cách qua cách ăn pizza cực thú vị" data-was-processed="true">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <h3>
-                    <a class="line-clamp line-clamp-2" href="/tiet-lo-tinh-cach-qua-cach-an-pizza-cuc-thu-vi"
-                      title="Tiết lộ tính cách qua cách ăn pizza cực thú vị">Tiết lộ tính cách qua cách ăn pizza cực thú
-                      vị</a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+ 
   </main>
+  
   <footer class="footer bg-green text-white pt-5 pb-3">
     <div class="container">
       <div class="row">
@@ -572,5 +329,6 @@
 
 <!-- Load Cart Module -->
 <script src="assets/js/cart.js"></script>
+<script src="assets/js/giohang.js"></script>
 
-</html>
+</html> 
