@@ -68,8 +68,8 @@
 
 .cart-count {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -15px;
+  right: -10px;
   background-color: #e31837;
   color: white;
   border-radius: 50%;
@@ -3674,7 +3674,6 @@ body {
 
 .cart-link p {
   margin: 0;
-  color: #666;
   font-size: 20px;
   transition: color 0.3s ease;
 }
