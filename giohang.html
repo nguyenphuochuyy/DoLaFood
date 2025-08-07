@@ -80,7 +80,7 @@
               <li class="li-cart">
                 <div class="icon ms-2 cart-dropdown-container">
                   <p><i class="fa-solid fa-cart-shopping"></i></p>
-                  <span class="cart-count">0</span>
+                  <span class="cart-count">1</span>
                   
                   <!-- Cart Dropdown -->
                   <div class="cart-dropdown">
@@ -191,7 +191,144 @@
   </div>
   
   <main>
- 
+    <div class="container my-5">
+      <div class="row">
+        <!-- Cart Table -->
+        <div class="col-lg-8">
+          <div class="cart-table-wrapper">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Thông tin sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-table-body">
+                   <!-- Sample cart item -->
+                   <tr class="cart-item" data-item-id="1" data-unit-price="99000">
+                     <td>
+                       <div class="product-info d-flex align-items-center">
+                         <img src="assets/images/pro1.webp" alt="Gà Giòn Xốt Hàn" class="product-image me-3">
+                         <div class="product-details">
+                           <h6 class="product-name mb-1">Gà Giòn Xốt Tương Tỏi Hàn Quốc</h6>
+                           <small class="text-muted d-block">3 miếng</small>
+                           <small class="text-muted delete-btn">Xóa</small>
+                         </div>
+                       </div>
+                     </td>
+                     <td class="unit-price">
+                       <span class="price">99.000₫</span>
+                     </td>
+                     <td class="quantity-cell">
+                       <div class="quantity-controls d-flex align-items-center">
+                         <button type="button" class="quantity-btn minus">-</button>
+                         <input type="number" class="quantity-input" value="1" min="1">
+                         <button type="button" class="quantity-btn plus">+</button>
+                       </div>
+                     </td>
+                     <td class="item-total">
+                       <span class="total-item-price">99.000₫</span>
+                     </td>
+                   </tr>
+                 </tbody>
+              </table>
+            </div>
+            
+            <!-- Cart Summary -->
+            <div class="cart-summary-row">
+              <div class="row justify-content-end">
+                <div class="col-md-6">
+                  <div class="cart-summary">
+                    <div class="d-flex justify-content-between mb-2">
+                      <span>Tổng tiền:</span>
+                      <span class="total-amount fw-bold">99.000₫</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Information Form -->
+        <div class="col-lg-4">
+          <div class="delivery-form-wrapper">
+            <div class="delivery-form bg-success text-white p-4 rounded">
+              <h5 class="mb-4">Thời gian giao hàng</h5>
+              
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label for="delivery-date" class="form-label">Chọn ngày</label>
+                  <input type="date" class="form-control" id="delivery-date" required>
+                </div>
+                <div class="col-6">
+                  <label for="delivery-time" class="form-label">Chọn thời gian</label>
+                  <select class="form-select" id="delivery-time" required>
+                    <option value="">Chọn giờ</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="invoice-needed">
+                <label class="form-check-label" for="invoice-needed">
+                  Xuất hóa đơn công ty
+                </label>
+              </div>
+
+              <div class="company-fields" style="display: none;">
+                <div class="mb-3">
+                  <label for="company-name" class="form-label">Tên công ty</label>
+                  <input type="text" class="form-control" id="company-name" placeholder="Nhập tên công ty">
+                </div>
+
+                <div class="mb-3">
+                  <label for="tax-code" class="form-label">Mã số thuế</label>
+                  <input type="text" class="form-control" id="tax-code" placeholder="Mã số thuế">
+                </div>
+
+                <div class="mb-3">
+                  <label for="company-address" class="form-label">Địa chỉ công ty</label>
+                  <textarea class="form-control" id="company-address" rows="3" placeholder="Nhập địa chỉ công ty (có ghi chú Phường/Xã, Quận/Huyện, Tỉnh/Thành phố nếu có)"></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="invoice-email" class="form-label">Email nhận hóa đơn</label>
+                  <input type="email" class="form-control" id="invoice-email" placeholder="Email nhận hóa đơn">
+                </div>
+              </div>
+
+              <div class="total-section mb-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fs-5">Tổng tiền:</span>
+                  <span class="fs-4 fw-bold total-amount">99.000₫</span>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-light w-100 btn-checkout">
+                Thanh toán
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   
   <footer class="footer bg-green text-white pt-5 pb-3">

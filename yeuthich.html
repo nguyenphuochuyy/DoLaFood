@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Món ăn yêu thích</title>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Vendor -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+  <!-- Main css -->
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/dangnhap.css" />
+  <link rel="stylesheet" href="assets/css/yeuthich.css" />
+  <link rel="stylesheet" href="assets/css/modal.css" />
+</head>
+
+<body>
+  <header id="header" class="header">
+    <div class="header-top ">
+      <p>Nhiều ưu đãi dành cho bạn</p>
+    </div>
+    <div class="header-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="menu-bar d-lg-none">
+            <button id="openMenu" class="menu-icon">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <div class="col-lg-2 col-xl-2 col-12 image-effect">
+            <a href="">
+              <img src="assets/images/logo.webp" alt="Dola Food Logo">
+            </a>
+          </div>
+          <div class="col-lg-3 col-xl-4  search-header">
+            <form action="" class="search-form header-search-form input-group search-bar">
+              <input type="text" placeholder="Salad"
+                class="search-input input-group-field auto-search search-auto form-control" />
+              <button type="submit" class="search-button "><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <div class="col-lg-7 col-xl-6">
+            <ul class="d-flex align-items-center justify-content-end list-unstyled">
+              <li >
+                <div class=" align-items-center d-none d-lg-inline-flex">
+                  <img src="assets/images/delivery.webp" width="50" height="50" alt="User Icon">
+                  <div class="ms-2 delivery-info">
+                    <span>Giao hàng tận nơi</span>
+                    <p class="mb-0">1900 6750</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class=" align-items-center icon ms-2 d-none d-lg-inline-flex user-dropdown">
+                  <p><i class="fa-solid fa-user"></i></p>
+                  <div class="dropdown-menu user-menu">
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-user-plus"></i>
+                      Đăng ký
+                    </a>
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-sign-in-alt"></i>
+                      Đăng nhập
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="yeuthich.html" class="dropdown-item">
+                      <i class="fas fa-heart"></i>
+                      Danh sách yêu thích
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="li-cart">
+                <div class="icon ms-2 cart-dropdown-container">
+                  <p><i class="fa-solid fa-cart-shopping"></i></p>
+                  <span class="cart-count">1</span>
+                  
+                  <!-- Cart Dropdown -->
+                  <div class="cart-dropdown">
+                    <!-- Cart Header -->
+                    <div class="cart-header">
+                      <div class="delivery-text">
+                        <span>Giao hàng</span>
+                        <p>15-30 phút</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Cart Items Container -->
+                    <div class="cart-items">
+                      <!-- Cart items sẽ được render động bởi cart.js -->
+                      <p class="empty-cart">Giỏ hàng trống</p>
+                    </div>
+                    
+                    <!-- Cart Total -->
+                    <div class="cart-total">
+                      <div class="total-row">
+                        <span>Tổng tiền:</span>
+                        <span class="total-price">0đ</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Cart Actions -->
+                    <div class="cart-actions">
+                      <button class="btn-checkout">Thanh toán</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li >
+                <a href="tatcasanpham.html" class=" custom-btn d-none d-lg-inline-flex">Đặt món online</a>
+              </li>
+              <li >
+                <a href="#" class=" custom-btn d-none d-lg-inline-flex">Đặt bàn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu">
+      <div class="container">
+        <div class="header-menu-des">
+          <div class="header-nav">
+            <nav class="navbar navbar-expand-lg custom-navbar">
+              <div class="container">
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" data-page="index.html">
+                      <a class="nav-link" href="index.html">
+                        Trang chủ
+                      </a>
+                    </li>
+                    <li class="nav-item" data-page="gioithieu.html">
+                      <a class="nav-link" href="gioithieu.html">
+                        Giới thiệu
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown" data-page="tatcasanpham.html">
+                      <a class="nav-link dropdown-toggle" href="tatcasanpham.html" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sản phẩm
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="chitietsanpham.html">Pizza</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Khai vị</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Mỳ Ý</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Salad</a>
+                        <a class="dropdown-item" href="chitietsanpham.html">Thức uống</a>
+                      </div>
+                    </li>
+                    <li class="nav-item" data-page="tintuc.html">
+                      <a class="nav-link" href="tintuc.html">
+                        Tin tức
+                      </a>
+                    </li>
+                    <li class="nav-item" data-page="lienhe.html">
+                      <a class="nav-link" href="lienhe.html">
+                        Liên hệ
+                      </a>
+                    </li>
+                    <li class="nav-item" data-page="faq.html">
+                      <a class="nav-link" href="faq.html">
+                        Câu hỏi thường gặp
+                      </a>
+                    </li>
+                    <li class="nav-item" data-page="hethongcuahang.html">
+                      <a class="nav-link" href="hethongcuahang.html">
+                        Hệ thống cửa hàng
+                      </a>
+                    </li>
+                    <li class="nav-item" data-page="datban.html">
+                      <a class="nav-link" href="datlich.html">
+                        Đặt bàn
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <div class="breadcrumb-custom">
+      <div class="container">
+        <a href="index.html">Trang chủ</a> <span>&gt;</span> <span class="active">Món ăn yêu thích</span>
+      </div>
+    </div>
+    <main>
+      <div class="wishlist-container">
+        <div class="container">
+          <div class="wishlist-header">
+            <h1 class="wishlist-title">Món ăn yêu thích</h1>
+            <p class="wishlist-subtitle">Những món ăn bạn đã lưu để thưởng thức sau</p>
+          </div>
+          
+          <div class="wishlist-content">
+            <div class="row row-fix" id="wishlist-items">
+              <!-- Wishlist items will be populated by JavaScript -->
+              <div class="col-6 col-md-4 col-lg-3 col-xl-20 col-fix">
+                <div class="product-card">
+                  <button class="wishlist-btn active" data-product-id="2">
+                    <i class="fas fa-heart"></i>
+                  </button>
+                  <div class="product-card-header">
+                    <img src="assets/images/pro1.webp" alt="Gà Giòn Xốt Tương Tỏi Hàn Quốc" class="product-img">
+                  </div>
+                  <div class="product-card-body">
+                    <h5 class="product-title">Gà Giòn Xốt Tương Tỏi Hàn Quốc</h5>
+                    <p class="product-desc">Những miếng gà tươi ngon tẩm bột chiên giòn phủ xốt tương tỏi kiểu Hàn...</p>
+                    <a href="#" class="product-more">Xem thêm</a>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                      <span class="product-price">Giá chỉ từ <b>99.000₫</b></span>
+                      <button class="btn btn-add">Thêm</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-6 col-md-4 col-lg-3 col-xl-20 col-fix">
+                <div class="product-card">
+                  <div class="product-image-wrapper">
+                    <img src="assets/images/product-sample2.jpg" alt="Gà Nướng BBQ (2 miếng)" class="product-image">
+                    <button class="wishlist-btn active" data-product-id="2">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-title">Gà Nướng BBQ (2 miếng)</h3>
+                    <p class="product-description">Thịt gà mềm ngọt, thấm đẫm gia vị, da gà giòn rụm, màu vàng...</p>
+                    <p class="product-link">Xem thêm</p>
+                    <div class="product-actions">
+                      <div class="price-section">
+                        <span class="price-label">Giá chỉ từ</span>
+                        <span class="current-price">99.000₫</span>
+                      </div>
+                      <button class="add-to-cart-btn">
+                        Thêm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-4 col-lg-3 col-xl-20 col-fix">
+                <div class="product-card">
+                  <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303" alt="Gà Giòn Xốt Hàn - Truyền thống" class="product-image">
+                    <div class="product-badges">
+                      <span class="badge-new">Mới</span>
+                    </div>
+                    <button class="wishlist-btn active" data-product-id="3">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-title">Gà Giòn Xốt Hàn - Truyền thống</h3>
+                    <p class="product-description">Gà tẩm bột chiên giòn rụm phủ lớp xốt (có chút vị cay) rất nhẹ...</p>
+                    <p class="product-link">Xem thêm</p>
+                    <div class="product-actions">
+                      <div class="price-section">
+                        <span class="price-label">Giá chỉ từ</span>
+                        <span class="current-price">249.000₫</span>
+                      </div>
+                      <button class="add-to-cart-btn">
+                        Thêm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-4 col-lg-3 col-xl-20 col-fix">
+                <div class="product-card">
+                  <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303" alt="Gà Giòn Xốt Hàn - Truyền thống" class="product-image">
+                    <div class="product-badges">
+                      <span class="badge-new">Mới</span>
+                    </div>
+                    <button class="wishlist-btn active" data-product-id="4">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-title">Gà Giòn Xốt Hàn - Truyền thống</h3>
+                    <p class="product-description">Gà tẩm bột chiên giòn rụm phủ lớp xốt (có chút vị cay) rất nhẹ...</p>
+                    <p class="product-link">Xem thêm</p>
+                    <div class="product-actions">
+                      <div class="price-section">
+                        <span class="price-label">Giá chỉ từ</span>
+                        <span class="current-price">429.000₫</span>
+                      </div>
+                      <button class="add-to-cart-btn">
+                        Thêm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-4 col-lg-3 col-xl-20 col-fix">
+                <div class="product-card">
+                  <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/510/571/products/0003269-pizza-puff-chicken-delig.png?v=1708679416303" alt="Gà Giòn Xốt Tương Tỏi Hàn Quốc" class="product-image">
+                    <div class="product-badges">
+                      <span class="badge-new">Mới</span>
+                    </div>
+                    <button class="wishlist-btn active" data-product-id="5">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                  </div>
+                  <div class="product-info">
+                    <h3 class="product-title">Gà Giòn Xốt Tương Tỏi Hàn Quốc</h3>
+                    <p class="product-description">Những miếng gà tươi ngon tắm bột chiên giòn phủ xốt tương tỏi...</p>
+                    <p class="product-link">Xem thêm</p>
+                    <div class="product-actions">
+                      <div class="price-section">
+                        <span class="price-label">Giá chỉ từ</span>
+                        <span class="current-price">99.000₫</span>
+                      </div>
+                      <button class="add-to-cart-btn">
+                        Thêm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Empty state -->
+            <div class="empty-wishlist" id="empty-wishlist" style="display: none;">
+              <div class="empty-content">
+                <i class="fas fa-heart-broken"></i>
+                <h3>Chưa có món ăn yêu thích</h3>
+                <p>Hãy khám phá menu và thêm những món ăn bạn yêu thích vào đây!</p>
+                <a href="tatcasanpham.html" class="btn-explore">Khám phá menu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer bg-green text-white pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- VỀ CHÚNG TÔI -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="footer-widget h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h4 class="footer-title mb-2">VỀ CHÚNG TÔI</h4>
+                <div class="footer-underline mb-3"></div>
+                <p class="footer-desc mb-4">
+                  Chào mừng bạn đến với Dola Food - điểm đến lý tưởng cho những người yêu thưởng thức pizza tại thành phố! Dola Food tự hào là địa chỉ pizza hàng đầu, nổi tiếng với chất lượng món ăn tuyệt vời, dịch vụ tận tâm và mức độ hài lòng cao từ phía khách hàng.
+                </p>
+                <h5 class="footer-title mb-2" style="font-size: 1.1rem;">HÌNH THỨC THANH TOÁN</h5>
+                <div class="footer-underline mb-3"></div>
+                <div class="d-flex gap-2 align-items-center">
+                  <div class="payment-method text-center">
+                    <img src="assets/images/payment_1.webp" alt="Tiền mặt" width="48">
+                  </div>
+                  <div class="payment-method text-center">
+                    <img src="assets/images/payment_2.webp" alt="Chuyển khoản" width="48">
+                  </div>
+                  <div class="payment-method text-center">
+                    <img src="assets/images/payment_3.webp" alt="Visa/Master" width="48">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- THÔNG TIN -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="footer-widget h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h4 class="footer-title mb-2">THÔNG TIN</h4>
+                <div class="footer-underline mb-3"></div>
+                <p class="footer-desc mb-3">
+                  Công ty TNHH Dola Food chuyên phục vụ trong lĩnh vực nhà hàng. Mã số thuế: 123456xxxx - Ngày cấp: 13/05/2024 - Nơi cấp: Sở kế hoạch và đầu tư TPHCM - Website: dola-food.mysapo.net
+                </p>
+                <ul class="footer-contact list-unstyled mb-4">
+                  <li class="d-flex align-items-start mb-3">
+                    <span class="footer-icon me-2"><i class="fas fa-map-marker-alt"></i></span>
+                    <span>70 Lữ Gia, Phường 15, Quận 11, TP.HCM</span>
+                  </li>
+                  <li class="d-flex align-items-start mb-3">
+                    <span class="footer-icon me-2"><i class="fas fa-clock"></i></span>
+                    <span>
+                      8h - 22h<br>
+                      Từ thứ 2 đến chủ nhật
+                    </span>
+                  </li>
+                  <li class="d-flex align-items-start mb-3">
+                    <span class="footer-icon me-2"><i class="fas fa-phone"></i></span>
+                    <span>1900 6750</span>
+                  </li>
+                  <li class="d-flex align-items-start mb-3">
+                    <span class="footer-icon me-2"><i class="fas fa-envelope"></i></span>
+                    <span>support@sapo.vn</span>
+                  </li>
+                </ul>
+                <h6 class="footer-title mb-2" style="font-size: 1.1rem;">THEO DÕI CHÚNG TÔI</h6>
+                <div class="footer-underline mb-3"></div>
+                <div class="footer-social d-flex gap-3">
+                  <a href="#" class="footer-social-icon"><img src="assets/images/zalo-icon.png" alt="Zalo" width="22"></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+                  <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- CHÍNH SÁCH VÀ HƯỚNG DẪN -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="footer-widget h-100">
+              <h4 class="footer-title mb-2">CHÍNH SÁCH VÀ HƯỚNG DẪN</h4>
+              <div class="footer-underline mb-3"></div>
+              <ul class="footer-menu-list ps-0">
+                <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Chính sách thành viên</a></li>
+                <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Chính sách thanh toán</a></li>
+                <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Bảo mật thông tin cá nhân</a></li>
+                <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Hướng dẫn mua hàng</a></li>
+                <li class="menu-item mb-3"><a href="#" class="menu-link"><span class="me-2">→</span>Hướng dẫn thanh toán</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- TIN TỨC MỚI -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="footer-widget h-100">
+              <h4 class="footer-title mb-2">TIN TỨC MỚI</h4>
+              <div class="footer-underline mb-3"></div>
+              <ul class="footer-news-list list-unstyled">
+                <li class="mb-3">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                    <img src="assets/images/de-banh-pizza-mua-o-dau-0.webp" alt="news1" class="footer-news-img me-3">
+                    <span>Để bánh pizza mua ở đâu đảm bảo chất lượng?</span>
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                    <img src="assets/images/cach-lam-pizza-xot-mayonnaise-4.webp" alt="news2" class="footer-news-img me-3">
+                    <span>Cách làm pizza xốt Mayonnaise thơm béo...</span>
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                    <img src="assets/images/tim-hieu-cac-loai-pasta-0.jpg" alt="news3" class="footer-news-img me-3">
+                    <span>Pasta là món ăn của nước nào? Pasta và...</span>
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none footer-news-link">
+                    <img src="assets/images/tiet-lo-tinh-cach-qua-cach-an-pizza-0.jpg" alt="news4" class="footer-news-img me-3">
+                    <span>Tiết lộ tính cách qua cách ăn pizza cực thú vị</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html> 

@@ -8,7 +8,32 @@ document.addEventListener('DOMContentLoaded', function() {
         setupQuantityControls();
         setupCheckboxToggle();
         setupFormValidation();
+        setupDeleteButtons();
         calculateTotals();
+        loadCartData();
+    }
+    
+    // Load cart data from localStorage or create sample data
+    function loadCartData() {
+        // For demo purposes, we'll keep the sample data
+        // In a real app, you would load from localStorage or API
+        calculateTotals();
+    }
+    
+    // Setup delete buttons
+    function setupDeleteButtons() {
+        const deleteButtons = document.querySelectorAll('.product-details .delete-btn');
+        
+        deleteButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const cartItem = this.closest('.cart-item');
+                if (confirm('Bạn có muốn xóa sản phẩm này khỏi giỏ hàng?')) {
+                    cartItem.remove();
+                    calculateTotals();
+                    updateCartCount();
+                }
+            });
+        });
     }
     
     // Quantity Controls
@@ -17,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const quantityInputs = document.querySelectorAll('.quantity-input');
         
         quantityBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
                 const input = this.parentElement.querySelector('.quantity-input');
                 const isPlus = this.classList.contains('plus');
                 const isMinus = this.classList.contains('minus');
@@ -33,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.value = currentValue;
                 updateItemTotal(input);
                 calculateTotals();
+                updateCartCount();
             });
         });
         
@@ -44,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.value = value;
                 updateItemTotal(this);
                 calculateTotals();
+                updateCartCount();
             });
             
             input.addEventListener('blur', function() {
@@ -52,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.value = value;
                 updateItemTotal(this);
                 calculateTotals();
+                updateCartCount();
             });
         });
     }
@@ -62,7 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const unitPriceElement = cartItem.querySelector('.unit-price .price');
         const totalPriceElement = cartItem.querySelector('.total-item-price');
         
-        const unitPrice = parseFloat(unitPriceElement.textContent.replace(/[^\d]/g, ''));
+        // Get unit price from data attribute
+        const unitPrice = parseInt(cartItem.dataset.unitPrice) || 0;
         const quantity = parseInt(quantityInput.value) || 1;
         const total = unitPrice * quantity;
         
@@ -71,19 +101,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Calculate totals
     function calculateTotals() {
-        const totalPriceElements = document.querySelectorAll('.total-item-price');
+        const cartItems = document.querySelectorAll('.cart-item');
         let grandTotal = 0;
         
-        totalPriceElements.forEach(element => {
-            const price = parseFloat(element.textContent.replace(/[^\d]/g, ''));
-            grandTotal += price;
+        cartItems.forEach(item => {
+            const unitPrice = parseInt(item.dataset.unitPrice) || 0;
+            const quantity = parseInt(item.querySelector('.quantity-input').value) || 1;
+            grandTotal += unitPrice * quantity;
         });
         
-        // Update cart total
-        const totalAmountElement = document.querySelector('.total-amount');
-        if (totalAmountElement) {
-            totalAmountElement.textContent = formatPrice(grandTotal);
-        }
+        // Update all total amount elements
+        const totalAmountElements = document.querySelectorAll('.total-amount');
+        totalAmountElements.forEach(element => {
+            element.textContent = formatPrice(grandTotal);
+        });
         
         // Update cart count in header
         updateCartCount();
@@ -112,41 +143,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup checkbox toggle for invoice
     function setupCheckboxToggle() {
         const invoiceCheckbox = document.getElementById('invoice-needed');
-        const companyFields = document.querySelectorAll('#company-name, #tax-code, #company-address, #invoice-email');
+        const companyFields = document.querySelector('.company-fields');
+        const companyInputs = document.querySelectorAll('#company-name, #tax-code, #company-address, #invoice-email');
         
-        if (invoiceCheckbox) {
+        if (invoiceCheckbox && companyFields) {
             invoiceCheckbox.addEventListener('change', function() {
                 const isChecked = this.checked;
                 
-                companyFields.forEach(field => {
-                    if (isChecked) {
-                        field.setAttribute('required', '');
-                        field.closest('.form-group').style.display = 'block';
-                    } else {
-                        field.removeAttribute('required');
-                        field.value = '';
-                    }
-                });
+                if (isChecked) {
+                    companyFields.style.display = 'block';
+                    companyInputs.forEach(input => {
+                        input.setAttribute('required', '');
+                    });
+                } else {
+                    companyFields.style.display = 'none';
+                    companyInputs.forEach(input => {
+                        input.removeAttribute('required');
+                        input.value = '';
+                    });
+                }
             });
             
             // Initial state
-            companyFields.forEach(field => {
-                if (!invoiceCheckbox.checked) {
-                    field.removeAttribute('required');
-                }
-            });
+            if (!invoiceCheckbox.checked) {
+                companyFields.style.display = 'none';
+                companyInputs.forEach(input => {
+                    input.removeAttribute('required');
+                });
+            }
         }
     }
     
     // Setup form validation
     function setupFormValidation() {
-        const deliveryForm = document.querySelector('.delivery-form');
         const checkoutBtn = document.querySelector('.btn-checkout');
         
         if (checkoutBtn) {
             checkoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
                 if (!validateDeliveryForm()) {
-                    e.preventDefault();
                     return;
                 }
                 
@@ -240,17 +276,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 delivery: formData
             });
             
-            // Simulate success
-            alert('Đặt hàng thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.');
+            // Show success notification
+            showSuccessNotification('Đặt hàng thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.');
             
-            // Reset form
-            // window.location.href = 'index.html';
+            // Reset form (optional)
+            // clearCart();
             
             // Reset button state
             checkoutBtn.textContent = originalText;
             checkoutBtn.disabled = false;
             
         }, 2000);
+    }
+    
+    // Show success notification
+    function showSuccessNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'success-notification';
+        notification.innerHTML = `
+            <div class="d-flex align-items-center">
+                <i class="fas fa-check-circle me-2"></i>
+                <span>${message}</span>
+            </div>
+        `;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #006a31;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            z-index: 10000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        `;
+
+        document.body.appendChild(notification);
+
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+
+        // Animate out and remove
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 300);
+        }, 4000);
     }
     
     // Collect form data
@@ -282,9 +361,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         cartItemElements.forEach(item => {
             const productName = item.querySelector('.product-name').textContent;
-            const unitPrice = parseFloat(item.querySelector('.unit-price .price').textContent.replace(/[^\d]/g, ''));
+            const unitPrice = parseInt(item.dataset.unitPrice) || 0;
             const quantity = parseInt(item.querySelector('.quantity-input').value);
-            const total = parseFloat(item.querySelector('.total-item-price').textContent.replace(/[^\d]/g, ''));
+            const total = unitPrice * quantity;
             
             cartItems.push({
                 name: productName,
@@ -294,12 +373,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        const grandTotal = parseFloat(document.querySelector('.total-amount').textContent.replace(/[^\d]/g, ''));
+        const grandTotal = cartItems.reduce((sum, item) => sum + item.total, 0);
         
         return {
             items: cartItems,
             total: grandTotal
         };
+    }
+    
+    // Clear cart
+    function clearCart() {
+        const cartTableBody = document.getElementById('cart-table-body');
+        cartTableBody.innerHTML = '<tr><td colspan="4" class="text-center py-4">Giỏ hàng trống</td></tr>';
+        calculateTotals();
     }
     
     // Set minimum date to today
@@ -315,16 +401,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize minimum date
     setMinimumDate();
     
-    // Mobile menu toggle (if needed)
-    const openMenuBtn = document.getElementById('openMenu');
-    if (openMenuBtn) {
-        openMenuBtn.addEventListener('click', function() {
-            // Toggle mobile menu logic here
-            console.log('Mobile menu toggled');
-        });
-    }
-    
-    // Animation on scroll (optional)
+    // Animation on scroll
     function addScrollAnimations() {
         const observerOptions = {
             threshold: 0.1,
